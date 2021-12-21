@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container">
+    <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        {% for heading in headings %}
+            <th scope="col">{{ heading }}</th>
+        {% endfor %}
+        <th scope="col">Delete</th>
+        <th scope="col">Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for obj in csv_objs %}
+          <tr>
+            <td>{{ obj.objectId }}</td>
+            <td>{{ obj.isHighlight }}</td>
+            <td>{{ obj.accessionNumber }}</td>
+            <td>{{ obj.accessionYear }}</td>
+            <td>{{ obj.isPublicDomain }}</td>
+            <td>{{ obj.primaryImage }}</td>
+            <td>{{ obj.primaryImageSmall }}</td>
+            <td>{{ obj.additionalImages }}</td>
+            <td>{{ obj.department }}</td>
+            <td>{{ obj.objectName }}</td>
+            <td>{{ obj.title }}</td>
+            <td>{{ obj.culture }}</td>
+            <td>{{ obj.period }}</td>
+            <td>{{ obj.dynasty }}</td>
+            <td>{{ obj.reign }}</td>
+            <td>{{ obj.portfolio }}</td>
+            <td>{{ obj.artistRole }}</td>
+            <td>{{ obj.artistPrefix }}</td>
+            <td>{{ obj.artistDisplayName }}</td>
+            <td>{{ obj.artistDisplayBio }}</td>
+            <td>{{ obj.artistSuffix }}</td>
+            <td>{{ obj.artistAlphaSort }}</td>
+            <td>{{ obj.artistNationality }}</td>
+            <td>{{ obj.artistBeginDate }}</td>
+            <td>{{ obj.artistEndDate }}</td>
+            <td>{{ obj.artistGender }}</td>
+            <td>{{ obj.artistWikidata_URL }}</td>
+            <td>{{ obj.artistULAN_URL }}</td>
+            <td>{{ obj.objectDate }}</td>
+            <td>{{ obj.objectBeginDate }}</td>
+            <td>{{ obj.objectEndDate }}</td>
+            <td>{{ obj.medium }}</td>
+            <td>{{ obj.dimensions }}</td>
+            <td>{{ obj.measurements }}</td>
+            <td>{{ obj.creditLine }}</td>
+            <td>{{ obj.geographyType }}</td>
+            <td>{{ obj.city }}</td>
+            <td>{{ obj.state }}</td>
+            <td>{{ obj.county }}</td>
+            <td>{{ obj.country }}</td>
+            <td>{{ obj.region }}</td>
+            <td>{{ obj.subregion }}</td>
+            <td>{{ obj.locale }}</td>
+            <td>{{ obj.locus }}</td>
+            <td>{{ obj.excavation }}</td>
+            <td>{{ obj.river }}</td>
+            <td>{{ obj.classification }}</td>
+            <td>{{ obj.rightsAndReproduction }}</td>
+            <td>{{ obj.linkResource }}</td>
+            <td>{{ obj.metadataDate }}</td>
+            <td>{{ obj.repository }}</td>
+            <td>{{ obj.objectURL }}</td>
+            <td>{{ obj.tags }}</td>
+            <td>{{ obj.objectWikidata_URL }}</td>
+            <td>{{ obj.isTimelineWork }}</td>
+            <td>{{ obj.galleryNumber }}</td>
+            <td>{{ obj.constituentID }}</td>
+            <td>{{ obj.role }}</td>
+            <td>{{ obj.name }}</td>
+            <td>{{ obj.constituentULAN_URL }}</td>
+            <td>{{ obj.constituentWikidata_URL }}</td>
+            <td>{{ obj.gender }}</td>
+            <td><a class="btn btn-danger" href="{% url 'practice_app:delete_row' obj.objectId %}">Delete</a></td>
+            <td><a class="btn btn-primary" href="{% url 'practice_app:edit_row' obj.objectId %}">Edit</a></td>
+          </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+    <a class="btn btn-primary" href="{% url 'practice_app:add_new_row' %}">Add New Row</a>
+  </div>
+{% endblock %}

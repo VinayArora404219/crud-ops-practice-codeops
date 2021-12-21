@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+<!--  <script src="{% static 'practice_app/csv_detail.js' %}"></script>-->
+
+
+{% block content %}
+  <div class="container">
+    <h1 class="text-center">Showing content of {{ file_name }}</h1>
+    <table class="table">
+    <thead>
+      <tr>
+        {% for heading in headings %}
+            <th scope="col">{{ heading }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+        {% for row in rows %}
+          <tr>
+            {% with count=1 %}
+              {% for column in row %}
+                <td>{{ column }}</td>
+              {% endfor %}
+            {% endwith %}
+          </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+  </div>
+{% endblock %}
