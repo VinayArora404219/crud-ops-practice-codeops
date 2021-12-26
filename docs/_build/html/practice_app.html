@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>practice_app package &mdash; HTTP Local Server Practice  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="practice_app.migrations package" href="practice_app.migrations.html" />
+    <link rel="prev" title="manage module" href="manage.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> HTTP Local Server Practice
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">HTTPLocalServerPractice</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="HTTPLocalServerPractice.html">HTTPLocalServerPractice package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manage.html">manage module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">practice_app package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="practice_app.migrations.html">practice_app.migrations package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-practice_app.apps">practice_app.apps module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-practice_app.forms">practice_app.forms module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-practice_app.models">practice_app.models module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-practice_app.urls">practice_app.urls module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-practice_app.utils">practice_app.utils module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-practice_app.views">practice_app.views module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-practice_app">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">HTTP Local Server Practice</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">HTTPLocalServerPractice</a> &raquo;</li>
+      <li>practice_app package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/practice_app.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="practice-app-package">
+<h1>practice_app package<a class="headerlink" href="#practice-app-package" title="Permalink to this headline"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="practice_app.migrations.html">practice_app.migrations package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="practice_app.migrations.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="practice_app.migrations.html#module-practice_app.migrations.0001_initial">practice_app.migrations.0001_initial module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="practice_app.migrations.html#module-practice_app.migrations.0002_alter_museumapicsv_accessionnumber">practice_app.migrations.0002_alter_museumapicsv_accessionnumber module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="practice_app.migrations.html#module-practice_app.migrations.0003_alter_museumapicsv_artistbegindate_and_more">practice_app.migrations.0003_alter_museumapicsv_artistbegindate_and_more module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="practice_app.migrations.html#module-practice_app.migrations.0004_alter_museumapicsv_objectbegindate_and_more">practice_app.migrations.0004_alter_museumapicsv_objectbegindate_and_more module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="practice_app.migrations.html#module-practice_app.migrations.0005_alter_museumapicsv_metadatadate">practice_app.migrations.0005_alter_museumapicsv_metadatadate module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="practice_app.migrations.html#module-practice_app.migrations.0006_alter_museumapicsv_artistdisplaybio">practice_app.migrations.0006_alter_museumapicsv_artistdisplaybio module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="practice_app.migrations.html#module-practice_app.migrations.0007_alter_museumapicsv_gallerynumber">practice_app.migrations.0007_alter_museumapicsv_gallerynumber module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="practice_app.migrations.html#module-practice_app.migrations.0008_alter_museumapicsv_constituentid">practice_app.migrations.0008_alter_museumapicsv_constituentid module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="practice_app.migrations.html#module-practice_app.migrations.0009_alter_museumapicsv_additionalimages_and_more">practice_app.migrations.0009_alter_museumapicsv_additionalimages_and_more module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="practice_app.migrations.html#module-practice_app.migrations.0010_alter_museumapicsv_accessionnumber">practice_app.migrations.0010_alter_museumapicsv_accessionnumber module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="practice_app.migrations.html#module-practice_app.migrations">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
+</section>
+<section id="module-practice_app.apps">
+<span id="practice-app-apps-module"></span><h2>practice_app.apps module<a class="headerlink" href="#module-practice_app.apps" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="practice_app.apps.PracticeAppConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">practice_app.apps.</span></span><span class="sig-name descname"><span class="pre">PracticeAppConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#practice_app.apps.PracticeAppConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.apps.config.AppConfig</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.apps.PracticeAppConfig.default_auto_field">
+<span class="sig-name descname"><span class="pre">default_auto_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'django.db.models.BigAutoField'</span></em><a class="headerlink" href="#practice_app.apps.PracticeAppConfig.default_auto_field" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.apps.PracticeAppConfig.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'practice_app'</span></em><a class="headerlink" href="#practice_app.apps.PracticeAppConfig.name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-practice_app.forms">
+<span id="practice-app-forms-module"></span><h2>practice_app.forms module<a class="headerlink" href="#module-practice_app.forms" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="practice_app.forms.EditOrCreateCSVRowForm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">practice_app.forms.</span></span><span class="sig-name descname"><span class="pre">EditOrCreateCSVRowForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">files=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_id='id_%s'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_class=&lt;class</span> <span class="pre">'django.forms.utils.ErrorList'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_suffix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">empty_permitted=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_required_attribute=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">renderer=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#practice_app.forms.EditOrCreateCSVRowForm" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.forms.models.ModelForm</span></code></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="practice_app.forms.EditOrCreateCSVRowForm.Meta">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Meta</span></span><a class="headerlink" href="#practice_app.forms.EditOrCreateCSVRowForm.Meta" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.forms.EditOrCreateCSVRowForm.Meta.fields">
+<span class="sig-name descname"><span class="pre">fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'__all__'</span></em><a class="headerlink" href="#practice_app.forms.EditOrCreateCSVRowForm.Meta.fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.forms.EditOrCreateCSVRowForm.Meta.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#practice_app.forms.EditOrCreateCSVRowForm.Meta.model" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#practice_app.models.MuseumAPICSV" title="practice_app.models.MuseumAPICSV"><code class="xref py py-class docutils literal notranslate"><span class="pre">practice_app.models.MuseumAPICSV</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.forms.EditOrCreateCSVRowForm.base_fields">
+<span class="sig-name descname"><span class="pre">base_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'accessionNumber':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'accessionYear':</span> <span class="pre">&lt;django.forms.fields.IntegerField</span> <span class="pre">object&gt;,</span> <span class="pre">'additionalImages':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'artistAlphaSort':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'artistBeginDate':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'artistDisplayBio':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'artistDisplayName':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'artistEndDate':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'artistGender':</span> <span class="pre">&lt;django.forms.fields.TypedChoiceField</span> <span class="pre">object&gt;,</span> <span class="pre">'artistNationality':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'artistPrefix':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'artistRole':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'artistSuffix':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'artistULAN_URL':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'artistWikidata_URL':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'city':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'classification':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'constituentID':</span> <span class="pre">&lt;django.forms.fields.IntegerField</span> <span class="pre">object&gt;,</span> <span class="pre">'constituentULAN_URL':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'constituentWikidata_URL':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'country':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'county':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'creditLine':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'culture':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'department':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'dimensions':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'dynasty':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'excavation':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'galleryNumber':</span> <span class="pre">&lt;django.forms.fields.IntegerField</span> <span class="pre">object&gt;,</span> <span class="pre">'gender':</span> <span class="pre">&lt;django.forms.fields.TypedChoiceField</span> <span class="pre">object&gt;,</span> <span class="pre">'geographyType':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'isHighlight':</span> <span class="pre">&lt;django.forms.fields.BooleanField</span> <span class="pre">object&gt;,</span> <span class="pre">'isPublicDomain':</span> <span class="pre">&lt;django.forms.fields.BooleanField</span> <span class="pre">object&gt;,</span> <span class="pre">'isTimelineWork':</span> <span class="pre">&lt;django.forms.fields.BooleanField</span> <span class="pre">object&gt;,</span> <span class="pre">'linkResource':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'locale':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'locus':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'measurements':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'medium':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'metadataDate':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'name':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'objectBeginDate':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'objectDate':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'objectEndDate':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'objectId':</span> <span class="pre">&lt;django.forms.fields.IntegerField</span> <span class="pre">object&gt;,</span> <span class="pre">'objectName':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'objectURL':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'objectWikidata_URL':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'period':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'portfolio':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'primaryImage':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'primaryImageSmall':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'region':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'reign':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'repository':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'rightsAndReproduction':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'river':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'role':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'state':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'subregion':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'tags':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'title':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#practice_app.forms.EditOrCreateCSVRowForm.base_fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.forms.EditOrCreateCSVRowForm.declared_fields">
+<span class="sig-name descname"><span class="pre">declared_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#practice_app.forms.EditOrCreateCSVRowForm.declared_fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="practice_app.forms.EditOrCreateCSVRowForm.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#practice_app.forms.EditOrCreateCSVRowForm.media" title="Permalink to this definition"></a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="practice_app.forms.UploadCSVFileForm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">practice_app.forms.</span></span><span class="sig-name descname"><span class="pre">UploadCSVFileForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#practice_app.forms.UploadCSVFileForm" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.forms.forms.Form</span></code></p>
+<p>Form that allows the user to upload CSV file.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.forms.UploadCSVFileForm.base_fields">
+<span class="sig-name descname"><span class="pre">base_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'csv_file':</span> <span class="pre">&lt;django.forms.fields.FileField</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#practice_app.forms.UploadCSVFileForm.base_fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="practice_app.forms.UploadCSVFileForm.clean">
+<span class="sig-name descname"><span class="pre">clean</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#practice_app.forms.UploadCSVFileForm.clean" title="Permalink to this definition"></a></dt>
+<dd><p>Hook for doing any extra form-wide cleaning after Field.clean() has been
+called on every field. Any ValidationError raised by this method will
+not be associated with a particular field; it will have a special-case
+association with the field named ‘__all__’.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.forms.UploadCSVFileForm.declared_fields">
+<span class="sig-name descname"><span class="pre">declared_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'csv_file':</span> <span class="pre">&lt;django.forms.fields.FileField</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#practice_app.forms.UploadCSVFileForm.declared_fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="practice_app.forms.UploadCSVFileForm.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#practice_app.forms.UploadCSVFileForm.media" title="Permalink to this definition"></a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-practice_app.models">
+<span id="practice-app-models-module"></span><h2>practice_app.models module<a class="headerlink" href="#module-practice_app.models" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="practice_app.models.FileModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">practice_app.models.</span></span><span class="sig-name descname"><span class="pre">FileModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">csv_file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">csv_file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#practice_app.models.FileModel" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.models.base.Model</span></code></p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="practice_app.models.FileModel.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#practice_app.models.FileModel.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="practice_app.models.FileModel.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#practice_app.models.FileModel.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.FileModel.csv_file">
+<span class="sig-name descname"><span class="pre">csv_file</span></span><a class="headerlink" href="#practice_app.models.FileModel.csv_file" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.FileModel.csv_file_name">
+<span class="sig-name descname"><span class="pre">csv_file_name</span></span><a class="headerlink" href="#practice_app.models.FileModel.csv_file_name" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.FileModel.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#practice_app.models.FileModel.id" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.FileModel.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#practice_app.models.FileModel.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">practice_app.models.</span></span><span class="sig-name descname"><span class="pre">MuseumAPICSV</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#practice_app.models.MuseumAPICSV" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.models.base.Model</span></code></p>
+<p>Model to store CSV data.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.accessionNumber">
+<span class="sig-name descname"><span class="pre">accessionNumber</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.accessionNumber" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.accessionYear">
+<span class="sig-name descname"><span class="pre">accessionYear</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.accessionYear" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.additionalImages">
+<span class="sig-name descname"><span class="pre">additionalImages</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.additionalImages" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.artistAlphaSort">
+<span class="sig-name descname"><span class="pre">artistAlphaSort</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.artistAlphaSort" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.artistBeginDate">
+<span class="sig-name descname"><span class="pre">artistBeginDate</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.artistBeginDate" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.artistDisplayBio">
+<span class="sig-name descname"><span class="pre">artistDisplayBio</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.artistDisplayBio" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.artistDisplayName">
+<span class="sig-name descname"><span class="pre">artistDisplayName</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.artistDisplayName" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.artistEndDate">
+<span class="sig-name descname"><span class="pre">artistEndDate</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.artistEndDate" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.artistGender">
+<span class="sig-name descname"><span class="pre">artistGender</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.artistGender" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.artistNationality">
+<span class="sig-name descname"><span class="pre">artistNationality</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.artistNationality" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.artistPrefix">
+<span class="sig-name descname"><span class="pre">artistPrefix</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.artistPrefix" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.artistRole">
+<span class="sig-name descname"><span class="pre">artistRole</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.artistRole" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.artistSuffix">
+<span class="sig-name descname"><span class="pre">artistSuffix</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.artistSuffix" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.artistULAN_URL">
+<span class="sig-name descname"><span class="pre">artistULAN_URL</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.artistULAN_URL" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.artistWikidata_URL">
+<span class="sig-name descname"><span class="pre">artistWikidata_URL</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.artistWikidata_URL" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.city">
+<span class="sig-name descname"><span class="pre">city</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.city" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.classification">
+<span class="sig-name descname"><span class="pre">classification</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.classification" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.constituentID">
+<span class="sig-name descname"><span class="pre">constituentID</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.constituentID" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.constituentULAN_URL">
+<span class="sig-name descname"><span class="pre">constituentULAN_URL</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.constituentULAN_URL" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.constituentWikidata_URL">
+<span class="sig-name descname"><span class="pre">constituentWikidata_URL</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.constituentWikidata_URL" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.country">
+<span class="sig-name descname"><span class="pre">country</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.country" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.county">
+<span class="sig-name descname"><span class="pre">county</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.county" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.creditLine">
+<span class="sig-name descname"><span class="pre">creditLine</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.creditLine" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.culture">
+<span class="sig-name descname"><span class="pre">culture</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.culture" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.department">
+<span class="sig-name descname"><span class="pre">department</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.department" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.dimensions">
+<span class="sig-name descname"><span class="pre">dimensions</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.dimensions" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.dynasty">
+<span class="sig-name descname"><span class="pre">dynasty</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.dynasty" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.excavation">
+<span class="sig-name descname"><span class="pre">excavation</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.excavation" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.galleryNumber">
+<span class="sig-name descname"><span class="pre">galleryNumber</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.galleryNumber" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.gender">
+<span class="sig-name descname"><span class="pre">gender</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.gender" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.geographyType">
+<span class="sig-name descname"><span class="pre">geographyType</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.geographyType" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.get_artistGender_display">
+<span class="sig-name descname"><span class="pre">get_artistGender_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.CharField:</span> <span class="pre">artistGender&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.get_artistGender_display" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.get_gender_display">
+<span class="sig-name descname"><span class="pre">get_gender_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.CharField:</span> <span class="pre">gender&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.get_gender_display" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.isHighlight">
+<span class="sig-name descname"><span class="pre">isHighlight</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.isHighlight" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.isPublicDomain">
+<span class="sig-name descname"><span class="pre">isPublicDomain</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.isPublicDomain" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.isTimelineWork">
+<span class="sig-name descname"><span class="pre">isTimelineWork</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.isTimelineWork" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.linkResource">
+<span class="sig-name descname"><span class="pre">linkResource</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.linkResource" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.locale">
+<span class="sig-name descname"><span class="pre">locale</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.locale" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.locus">
+<span class="sig-name descname"><span class="pre">locus</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.locus" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.measurements">
+<span class="sig-name descname"><span class="pre">measurements</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.measurements" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.medium">
+<span class="sig-name descname"><span class="pre">medium</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.medium" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.metadataDate">
+<span class="sig-name descname"><span class="pre">metadataDate</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.metadataDate" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.name" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.objectBeginDate">
+<span class="sig-name descname"><span class="pre">objectBeginDate</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.objectBeginDate" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.objectDate">
+<span class="sig-name descname"><span class="pre">objectDate</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.objectDate" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.objectEndDate">
+<span class="sig-name descname"><span class="pre">objectEndDate</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.objectEndDate" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.objectId">
+<span class="sig-name descname"><span class="pre">objectId</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.objectId" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.objectName">
+<span class="sig-name descname"><span class="pre">objectName</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.objectName" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.objectURL">
+<span class="sig-name descname"><span class="pre">objectURL</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.objectURL" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.objectWikidata_URL">
+<span class="sig-name descname"><span class="pre">objectWikidata_URL</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.objectWikidata_URL" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#practice_app.models.MuseumAPICSV.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.period">
+<span class="sig-name descname"><span class="pre">period</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.period" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.portfolio">
+<span class="sig-name descname"><span class="pre">portfolio</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.portfolio" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.primaryImage">
+<span class="sig-name descname"><span class="pre">primaryImage</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.primaryImage" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.primaryImageSmall">
+<span class="sig-name descname"><span class="pre">primaryImageSmall</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.primaryImageSmall" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.region">
+<span class="sig-name descname"><span class="pre">region</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.region" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.reign">
+<span class="sig-name descname"><span class="pre">reign</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.reign" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.repository">
+<span class="sig-name descname"><span class="pre">repository</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.repository" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.rightsAndReproduction">
+<span class="sig-name descname"><span class="pre">rightsAndReproduction</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.rightsAndReproduction" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.river">
+<span class="sig-name descname"><span class="pre">river</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.river" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.role">
+<span class="sig-name descname"><span class="pre">role</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.role" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.state">
+<span class="sig-name descname"><span class="pre">state</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.state" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.subregion">
+<span class="sig-name descname"><span class="pre">subregion</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.subregion" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.tags">
+<span class="sig-name descname"><span class="pre">tags</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.tags" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.models.MuseumAPICSV.title">
+<span class="sig-name descname"><span class="pre">title</span></span><a class="headerlink" href="#practice_app.models.MuseumAPICSV.title" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-practice_app.urls">
+<span id="practice-app-urls-module"></span><h2>practice_app.urls module<a class="headerlink" href="#module-practice_app.urls" title="Permalink to this headline"></a></h2>
+</section>
+<section id="module-practice_app.utils">
+<span id="practice-app-utils-module"></span><h2>practice_app.utils module<a class="headerlink" href="#module-practice_app.utils" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="practice_app.utils.check_missing_values">
+<span class="sig-prename descclassname"><span class="pre">practice_app.utils.</span></span><span class="sig-name descname"><span class="pre">check_missing_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#practice_app.utils.check_missing_values" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="practice_app.utils.validate_csv">
+<span class="sig-prename descclassname"><span class="pre">practice_app.utils.</span></span><span class="sig-name descname"><span class="pre">validate_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#practice_app.utils.validate_csv" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-practice_app.views">
+<span id="practice-app-views-module"></span><h2>practice_app.views module<a class="headerlink" href="#module-practice_app.views" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="practice_app.views.CSVAddNewRowView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">practice_app.views.</span></span><span class="sig-name descname"><span class="pre">CSVAddNewRowView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#practice_app.views.CSVAddNewRowView" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.edit.CreateView</span></code></p>
+<p>Class that allows to add new row to the CSV.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.views.CSVAddNewRowView.form_class">
+<span class="sig-name descname"><span class="pre">form_class</span></span><a class="headerlink" href="#practice_app.views.CSVAddNewRowView.form_class" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#practice_app.forms.EditOrCreateCSVRowForm" title="practice_app.forms.EditOrCreateCSVRowForm"><code class="xref py py-class docutils literal notranslate"><span class="pre">practice_app.forms.EditOrCreateCSVRowForm</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.views.CSVAddNewRowView.queryset">
+<span class="sig-name descname"><span class="pre">queryset</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;QuerySet</span> <span class="pre">[&lt;MuseumAPICSV:</span> <span class="pre">3&gt;,</span> <span class="pre">&lt;MuseumAPICSV:</span> <span class="pre">4&gt;,</span> <span class="pre">&lt;MuseumAPICSV:</span> <span class="pre">5&gt;,</span> <span class="pre">&lt;MuseumAPICSV:</span> <span class="pre">6&gt;,</span> <span class="pre">&lt;MuseumAPICSV:</span> <span class="pre">7&gt;,</span> <span class="pre">&lt;MuseumAPICSV:</span> <span class="pre">8&gt;,</span> <span class="pre">&lt;MuseumAPICSV:</span> <span class="pre">9&gt;,</span> <span class="pre">&lt;MuseumAPICSV:</span> <span class="pre">10&gt;,</span> <span class="pre">&lt;MuseumAPICSV:</span> <span class="pre">11&gt;,</span> <span class="pre">&lt;MuseumAPICSV:</span> <span class="pre">12&gt;,</span> <span class="pre">&lt;MuseumAPICSV:</span> <span class="pre">13&gt;,</span> <span class="pre">&lt;MuseumAPICSV:</span> <span class="pre">14&gt;,</span> <span class="pre">&lt;MuseumAPICSV:</span> <span class="pre">15&gt;,</span> <span class="pre">&lt;MuseumAPICSV:</span> <span class="pre">16&gt;,</span> <span class="pre">&lt;MuseumAPICSV:</span> <span class="pre">19&gt;]&gt;</span></em><a class="headerlink" href="#practice_app.views.CSVAddNewRowView.queryset" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.views.CSVAddNewRowView.required_css_class">
+<span class="sig-name descname"><span class="pre">required_css_class</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'required'</span></em><a class="headerlink" href="#practice_app.views.CSVAddNewRowView.required_css_class" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.views.CSVAddNewRowView.success_url">
+<span class="sig-name descname"><span class="pre">success_url</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/'</span></em><a class="headerlink" href="#practice_app.views.CSVAddNewRowView.success_url" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.views.CSVAddNewRowView.template_name">
+<span class="sig-name descname"><span class="pre">template_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'practice_app/edit_or_create_csv_row.html'</span></em><a class="headerlink" href="#practice_app.views.CSVAddNewRowView.template_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="practice_app.views.CSVEditRowView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">practice_app.views.</span></span><span class="sig-name descname"><span class="pre">CSVEditRowView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#practice_app.views.CSVEditRowView" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.edit.UpdateView</span></code></p>
+<p>Class that allows to edit a CSV row.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.views.CSVEditRowView.form_class">
+<span class="sig-name descname"><span class="pre">form_class</span></span><a class="headerlink" href="#practice_app.views.CSVEditRowView.form_class" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#practice_app.forms.EditOrCreateCSVRowForm" title="practice_app.forms.EditOrCreateCSVRowForm"><code class="xref py py-class docutils literal notranslate"><span class="pre">practice_app.forms.EditOrCreateCSVRowForm</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.views.CSVEditRowView.pk_url_kwarg">
+<span class="sig-name descname"><span class="pre">pk_url_kwarg</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'objectId'</span></em><a class="headerlink" href="#practice_app.views.CSVEditRowView.pk_url_kwarg" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.views.CSVEditRowView.queryset">
+<span class="sig-name descname"><span class="pre">queryset</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;QuerySet</span> <span class="pre">[&lt;MuseumAPICSV:</span> <span class="pre">3&gt;,</span> <span class="pre">&lt;MuseumAPICSV:</span> <span class="pre">4&gt;,</span> <span class="pre">&lt;MuseumAPICSV:</span> <span class="pre">5&gt;,</span> <span class="pre">&lt;MuseumAPICSV:</span> <span class="pre">6&gt;,</span> <span class="pre">&lt;MuseumAPICSV:</span> <span class="pre">7&gt;,</span> <span class="pre">&lt;MuseumAPICSV:</span> <span class="pre">8&gt;,</span> <span class="pre">&lt;MuseumAPICSV:</span> <span class="pre">9&gt;,</span> <span class="pre">&lt;MuseumAPICSV:</span> <span class="pre">10&gt;,</span> <span class="pre">&lt;MuseumAPICSV:</span> <span class="pre">11&gt;,</span> <span class="pre">&lt;MuseumAPICSV:</span> <span class="pre">12&gt;,</span> <span class="pre">&lt;MuseumAPICSV:</span> <span class="pre">13&gt;,</span> <span class="pre">&lt;MuseumAPICSV:</span> <span class="pre">14&gt;,</span> <span class="pre">&lt;MuseumAPICSV:</span> <span class="pre">15&gt;,</span> <span class="pre">&lt;MuseumAPICSV:</span> <span class="pre">16&gt;,</span> <span class="pre">&lt;MuseumAPICSV:</span> <span class="pre">19&gt;]&gt;</span></em><a class="headerlink" href="#practice_app.views.CSVEditRowView.queryset" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.views.CSVEditRowView.required_css_class">
+<span class="sig-name descname"><span class="pre">required_css_class</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'required'</span></em><a class="headerlink" href="#practice_app.views.CSVEditRowView.required_css_class" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.views.CSVEditRowView.success_url">
+<span class="sig-name descname"><span class="pre">success_url</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/'</span></em><a class="headerlink" href="#practice_app.views.CSVEditRowView.success_url" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.views.CSVEditRowView.template_name">
+<span class="sig-name descname"><span class="pre">template_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'practice_app/edit_or_create_csv_row.html'</span></em><a class="headerlink" href="#practice_app.views.CSVEditRowView.template_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="practice_app.views.csv_file_upload_view">
+<span class="sig-prename descclassname"><span class="pre">practice_app.views.</span></span><span class="sig-name descname"><span class="pre">csv_file_upload_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#practice_app.views.csv_file_upload_view" title="Permalink to this definition"></a></dt>
+<dd><p>View that allows the user to upload CSV file to the server.
+:param request: HTTPRequest object
+:return: HttpResponse object</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="practice_app.views.csv_row_delete_view">
+<span class="sig-prename descclassname"><span class="pre">practice_app.views.</span></span><span class="sig-name descname"><span class="pre">csv_row_delete_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">objectId</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#practice_app.views.csv_row_delete_view" title="Permalink to this definition"></a></dt>
+<dd><p>View that allows the user to upload CSV file to the server.
+:param request: HTTPRequest object
+:param objectId: id of the row to be deleted.
+:return: HttpResponse object</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="practice_app.views.index">
+<span class="sig-prename descclassname"><span class="pre">practice_app.views.</span></span><span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#practice_app.views.index" title="Permalink to this definition"></a></dt>
+<dd><p>Homepage of the website. Displays uploaded CSV file in table form.
+:param request: HTTPRequest object
+:return: HttpResponse object</p>
+</dd></dl>
+
+</section>
+<section id="module-practice_app">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-practice_app" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="manage.html" class="btn btn-neutral float-left" title="manage module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="practice_app.migrations.html" class="btn btn-neutral float-right" title="practice_app.migrations package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Vinay Arora.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

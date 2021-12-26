@@ -1,5 +1,5 @@
 from django.urls import path, include
-from practice_app.views import csv_file_upload_view, index, csv_detail_view, csv_row_delete_view, CSVEditRowView, CSVAddNewRowView
+from practice_app.views import csv_file_upload_view, index, csv_row_delete_view, CSVEditRowView, CSVAddNewRowView
 
 app_name = 'practice_app'
 urlpatterns = [

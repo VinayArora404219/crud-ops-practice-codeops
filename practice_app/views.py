@@ -8,11 +8,16 @@ from django.urls import reverse_lazy
 from django.views.generic import UpdateView, CreateView
 
 from practice_app.forms import UploadCSVFileForm, EditOrCreateCSVRowForm
-from practice_app.models import FileModel, MuseumAPICSV
+from practice_app.models import MuseumAPICSV
 from django.shortcuts import get_object_or_404
 
 
 def index(request):
+    """
+    Homepage of the website. Displays uploaded CSV file in table form.
+    :param request: HTTPRequest object
+    :return: HttpResponse object
+    """
     if request.method == 'GET':
         headings = [f.name for f in MuseumAPICSV._meta.get_fields()]
         museum_api_csv_objs = MuseumAPICSV.objects.all()
@@ -23,19 +28,10 @@ def index(request):
             })
 
 
-def csv_detail_view(request):
-    if request.method == 'GET':
-
-        headings = [f.name for f in MuseumAPICSV._meta.get_fields()]
-        museum_api_csv_objs = MuseumAPICSV.objects.all()
-
-        return render(request, 'practice_app/csv_detail.html', {
-            'headings': headings,
-            'csv_objs': museum_api_csv_objs,
-        })
-
-
 class CSVEditRowView(UpdateView):
+    """
+    Class that allows to edit a CSV row.
+    """
     queryset = MuseumAPICSV.objects.all()
     pk_url_kwarg = 'objectId'
     form_class = EditOrCreateCSVRowForm
@@ -45,6 +41,9 @@ class CSVEditRowView(UpdateView):
 
 
 class CSVAddNewRowView(CreateView):
+    """
+     Class that allows to add new row to the CSV.
+    """
     queryset = MuseumAPICSV.objects.all()
     form_class = EditOrCreateCSVRowForm
     template_name = 'practice_app/edit_or_create_csv_row.html'
@@ -53,6 +52,12 @@ class CSVAddNewRowView(CreateView):
 
 
 def csv_row_delete_view(request, objectId):
+    """
+        View that allows the user to upload CSV file to the server.
+        :param request: HTTPRequest object
+        :param objectId: id of the row to be deleted.
+        :return: HttpResponse object
+        """
     if request.method == 'GET':
         row_obj = get_object_or_404(MuseumAPICSV, pk=objectId)
 
@@ -61,6 +66,11 @@ def csv_row_delete_view(request, objectId):
 
 
 def csv_file_upload_view(request):
+    """
+    View that allows the user to upload CSV file to the server.
+    :param request: HTTPRequest object
+    :return: HttpResponse object
+    """
     if request.method == 'GET':
         form = UploadCSVFileForm()
         if MuseumAPICSV.objects.filter(objectId=1).exists() is not None:
@@ -159,9 +169,6 @@ def csv_file_upload_view(request):
                 pass
 
         return redirect('practice_app:index')
-            # return HttpResponseRedirect(reverse('images:home'))
-        # else:
-        #     form = UploadCSVFileForm(request.POST or None, request.FILES or None, request=request)
-        #     return render(request, 'practice_app/csv_upload.html', {'form': form})
+
 
 

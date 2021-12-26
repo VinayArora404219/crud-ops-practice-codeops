@@ -16,6 +16,9 @@ GENDER_CHOICES = (
 
 
 class MuseumAPICSV(models.Model):
+    """
+    Model to store CSV data.
+    """
     objectId = models.IntegerField(primary_key=True)
     isHighlight = models.BooleanField()
     accessionNumber = models.CharField(max_length=50)

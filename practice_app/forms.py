@@ -6,10 +6,12 @@ import pandas as pd
 from django.core.exceptions import ValidationError
 
 from practice_app.models import MuseumAPICSV
-from practice_app.utils import validate_csv
 
 
 class UploadCSVFileForm(forms.Form):
+    """
+    Form that allows the user to upload CSV file.
+    """
     csv_file = forms.FileField(label='Upload CSV File')
 
     def __init__(self, *args, **kwargs):
