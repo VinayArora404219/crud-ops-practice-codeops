@@ -1,6 +1,7 @@
 from django.db import models
 from django.core.validators import FileExtensionValidator
 # from .validators import validate_csv
+from django.urls import reverse
 
 
 class FileModel(models.Model):
@@ -78,7 +79,7 @@ class MuseumAPICSV(models.Model):
     objectWikidata_URL = models.CharField(max_length=50, null=True, blank=True)
     isTimelineWork = models.BooleanField()
     galleryNumber = models.IntegerField(null=True, blank=True)
-    constituentID = models.IntegerField(null=True, blank=True)
+    constituentID = models.FloatField(null=True, blank=True)
     role = models.CharField(max_length=50, null=True, blank=True)
     name = models.CharField(max_length=50, null=True, blank=True)
     constituentULAN_URL = models.CharField(max_length=50, null=True, blank=True)
