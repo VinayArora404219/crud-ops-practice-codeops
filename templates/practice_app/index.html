@@ -77,7 +77,11 @@
             <td>{{ obj.constituentULAN_URL }}</td>
             <td>{{ obj.constituentWikidata_URL }}</td>
             <td>{{ obj.gender }}</td>
-            <td><a class="btn btn-danger" href="{% url 'practice_app:delete_row' obj.objectId %}">Delete</a></td>
+            <td>
+              <form method="post" action="{% url 'practice_app:delete_row' obj.objectId %}">{% csrf_token %}
+                <button class="btn btn-danger" type="submit">Delete</button>
+              </form>
+            </td>
             <td><a class="btn btn-primary" href="{% url 'practice_app:edit_row' obj.objectId %}">Edit</a></td>
           </tr>
         {% endfor %}

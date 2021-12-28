@@ -16,11 +16,9 @@
     <tbody>
         {% for row in rows %}
           <tr>
-            {% with count=1 %}
               {% for column in row %}
                 <td>{{ column }}</td>
               {% endfor %}
-            {% endwith %}
           </tr>
         {% endfor %}
     </tbody>
