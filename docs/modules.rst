@@ -4,6 +4,6 @@ HTTPLocalServerPractice
 .. toctree::
    :maxdepth: 4
 
-   HTTPLocalServerPractice
-   manage
-   practice_app
+   practice_app/views
+   practice_app/models
+   tests.rst

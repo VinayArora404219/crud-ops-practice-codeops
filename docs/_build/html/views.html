@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Views &mdash; HTTP Local Server Practice  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Models" href="models.html" />
+    <link rel="prev" title="tests package" href="tests.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> HTTP Local Server Practice
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="modules.html">HTTPLocalServerPractice</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Models</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">HTTP Local Server Practice</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Views</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/views.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-practice_app.views">
+<span id="views"></span><h1>Views<a class="headerlink" href="#module-practice_app.views" title="Permalink to this headline"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="practice_app.views.CSVAddNewRowView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">practice_app.views.</span></span><span class="sig-name descname"><span class="pre">CSVAddNewRowView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#practice_app.views.CSVAddNewRowView" title="Permalink to this definition"></a></dt>
+<dd><p>View that allows the user to add new row to the CSV.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.views.CSVAddNewRowView.form_class">
+<span class="sig-name descname"><span class="pre">form_class</span></span><a class="headerlink" href="#practice_app.views.CSVAddNewRowView.form_class" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="practice_app.html#practice_app.forms.EditOrCreateCSVRowForm" title="practice_app.forms.EditOrCreateCSVRowForm"><code class="xref py py-class docutils literal notranslate"><span class="pre">practice_app.forms.EditOrCreateCSVRowForm</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="practice_app.views.CSVEditRowView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">practice_app.views.</span></span><span class="sig-name descname"><span class="pre">CSVEditRowView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#practice_app.views.CSVEditRowView" title="Permalink to this definition"></a></dt>
+<dd><p>View that allows the user to edit a CSV row.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="practice_app.views.CSVEditRowView.form_class">
+<span class="sig-name descname"><span class="pre">form_class</span></span><a class="headerlink" href="#practice_app.views.CSVEditRowView.form_class" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="practice_app.html#practice_app.forms.EditOrCreateCSVRowForm" title="practice_app.forms.EditOrCreateCSVRowForm"><code class="xref py py-class docutils literal notranslate"><span class="pre">practice_app.forms.EditOrCreateCSVRowForm</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="practice_app.views.csv_file_upload_view">
+<span class="sig-prename descclassname"><span class="pre">practice_app.views.</span></span><span class="sig-name descname"><span class="pre">csv_file_upload_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#practice_app.views.csv_file_upload_view" title="Permalink to this definition"></a></dt>
+<dd><p>View that allows the user to upload CSV file to the server.
+:param request: HTTPRequest object
+:return: HttpResponse object</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="practice_app.views.csv_row_delete_view">
+<span class="sig-prename descclassname"><span class="pre">practice_app.views.</span></span><span class="sig-name descname"><span class="pre">csv_row_delete_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">objectId</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#practice_app.views.csv_row_delete_view" title="Permalink to this definition"></a></dt>
+<dd><p>View that allows the user to upload CSV file to the server.
+:param request: HTTPRequest object
+:param objectId: id of the row to be deleted.
+:return: HttpResponse object</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="practice_app.views.list_csv_content_view">
+<span class="sig-prename descclassname"><span class="pre">practice_app.views.</span></span><span class="sig-name descname"><span class="pre">list_csv_content_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#practice_app.views.list_csv_content_view" title="Permalink to this definition"></a></dt>
+<dd><p>Homepage of the website. Displays uploaded CSV file in table form.
+:param request: HTTPRequest object
+:return: HttpResponse object</p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tests.html" class="btn btn-neutral float-left" title="tests package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="models.html" class="btn btn-neutral float-right" title="Models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Vinay Arora.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

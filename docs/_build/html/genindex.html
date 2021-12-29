@@ -36,7 +36,9 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">HTTPLocalServerPractice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="views.html">Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests.html">tests package</a></li>
 </ul>
 
         </div>
@@ -155,25 +157,21 @@
 </li>
       <li><a href="practice_app.html#practice_app.models.MuseumAPICSV.constituentWikidata_URL">constituentWikidata_URL (practice_app.models.MuseumAPICSV attribute)</a>
 </li>
-      <li><a href="practice_app.html#practice_app.models.MuseumAPICSV.country">country (practice_app.models.MuseumAPICSV attribute)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="practice_app.html#practice_app.models.MuseumAPICSV.country">country (practice_app.models.MuseumAPICSV attribute)</a>
+</li>
       <li><a href="practice_app.html#practice_app.models.MuseumAPICSV.county">county (practice_app.models.MuseumAPICSV attribute)</a>
 </li>
       <li><a href="practice_app.html#practice_app.models.MuseumAPICSV.creditLine">creditLine (practice_app.models.MuseumAPICSV attribute)</a>
 </li>
-      <li><a href="practice_app.html#practice_app.models.FileModel.csv_file">csv_file (practice_app.models.FileModel attribute)</a>
+      <li><a href="practice_app.html#practice_app.views.csv_file_upload_view">csv_file_upload_view() (in module practice_app.views)</a>, <a href="views.html#practice_app.views.csv_file_upload_view">[1]</a>
 </li>
-      <li><a href="practice_app.html#practice_app.models.FileModel.csv_file_name">csv_file_name (practice_app.models.FileModel attribute)</a>
+      <li><a href="practice_app.html#practice_app.views.csv_row_delete_view">csv_row_delete_view() (in module practice_app.views)</a>, <a href="views.html#practice_app.views.csv_row_delete_view">[1]</a>
 </li>
-      <li><a href="practice_app.html#practice_app.views.csv_file_upload_view">csv_file_upload_view() (in module practice_app.views)</a>
+      <li><a href="practice_app.html#practice_app.views.CSVAddNewRowView">CSVAddNewRowView (class in practice_app.views)</a>, <a href="views.html#practice_app.views.CSVAddNewRowView">[1]</a>
 </li>
-      <li><a href="practice_app.html#practice_app.views.csv_row_delete_view">csv_row_delete_view() (in module practice_app.views)</a>
-</li>
-      <li><a href="practice_app.html#practice_app.views.CSVAddNewRowView">CSVAddNewRowView (class in practice_app.views)</a>
-</li>
-      <li><a href="practice_app.html#practice_app.views.CSVEditRowView">CSVEditRowView (class in practice_app.views)</a>
+      <li><a href="practice_app.html#practice_app.views.CSVEditRowView">CSVEditRowView (class in practice_app.views)</a>, <a href="views.html#practice_app.views.CSVEditRowView">[1]</a>
 </li>
       <li><a href="practice_app.html#practice_app.models.MuseumAPICSV.culture">culture (practice_app.models.MuseumAPICSV attribute)</a>
 </li>
@@ -219,6 +217,12 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="practice_app.html#practice_app.models.MuseumAPICSV.dimensions">dimensions (practice_app.models.MuseumAPICSV attribute)</a>
 </li>
+      <li><a href="practice_app.html#practice_app.views.CSVAddNewRowView.dispatch">dispatch() (practice_app.views.CSVAddNewRowView method)</a>
+
+      <ul>
+        <li><a href="practice_app.html#practice_app.views.CSVEditRowView.dispatch">(practice_app.views.CSVEditRowView method)</a>
+</li>
+      </ul></li>
       <li><a href="practice_app.html#practice_app.models.MuseumAPICSV.dynasty">dynasty (practice_app.models.MuseumAPICSV attribute)</a>
 </li>
   </ul></td>
@@ -243,18 +247,12 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="practice_app.html#practice_app.forms.EditOrCreateCSVRowForm.Meta.fields">fields (practice_app.forms.EditOrCreateCSVRowForm.Meta attribute)</a>
 </li>
-      <li><a href="practice_app.html#practice_app.models.FileModel">FileModel (class in practice_app.models)</a>
-</li>
-      <li><a href="practice_app.html#practice_app.models.FileModel.DoesNotExist">FileModel.DoesNotExist</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="practice_app.html#practice_app.models.FileModel.MultipleObjectsReturned">FileModel.MultipleObjectsReturned</a>
-</li>
-      <li><a href="practice_app.html#practice_app.views.CSVAddNewRowView.form_class">form_class (practice_app.views.CSVAddNewRowView attribute)</a>
+      <li><a href="practice_app.html#practice_app.views.CSVAddNewRowView.form_class">form_class (practice_app.views.CSVAddNewRowView attribute)</a>, <a href="views.html#practice_app.views.CSVAddNewRowView.form_class">[1]</a>
 
       <ul>
-        <li><a href="practice_app.html#practice_app.views.CSVEditRowView.form_class">(practice_app.views.CSVEditRowView attribute)</a>
+        <li><a href="practice_app.html#practice_app.views.CSVEditRowView.form_class">(practice_app.views.CSVEditRowView attribute)</a>, <a href="views.html#practice_app.views.CSVEditRowView.form_class">[1]</a>
 </li>
       </ul></li>
   </ul></td>
@@ -310,16 +308,12 @@
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="practice_app.html#practice_app.models.FileModel.id">id (practice_app.models.FileModel attribute)</a>
-</li>
-      <li><a href="practice_app.html#practice_app.views.index">index() (in module practice_app.views)</a>
-</li>
       <li><a href="practice_app.migrations.html#practice_app.migrations.0001_initial.Migration.initial">initial (practice_app.migrations.0001_initial.Migration attribute)</a>
+</li>
+      <li><a href="practice_app.html#practice_app.models.MuseumAPICSV.isHighlight">isHighlight (practice_app.models.MuseumAPICSV attribute)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="practice_app.html#practice_app.models.MuseumAPICSV.isHighlight">isHighlight (practice_app.models.MuseumAPICSV attribute)</a>
-</li>
       <li><a href="practice_app.html#practice_app.models.MuseumAPICSV.isPublicDomain">isPublicDomain (practice_app.models.MuseumAPICSV attribute)</a>
 </li>
       <li><a href="practice_app.html#practice_app.models.MuseumAPICSV.isTimelineWork">isTimelineWork (practice_app.models.MuseumAPICSV attribute)</a>
@@ -331,6 +325,8 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="practice_app.html#practice_app.models.MuseumAPICSV.linkResource">linkResource (practice_app.models.MuseumAPICSV attribute)</a>
+</li>
+      <li><a href="practice_app.html#practice_app.views.list_csv_content_view">list_csv_content_view() (in module practice_app.views)</a>, <a href="views.html#practice_app.views.list_csv_content_view">[1]</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -429,22 +425,26 @@
 </li>
         <li><a href="practice_app.migrations.html#module-practice_app.migrations.0010_alter_museumapicsv_accessionnumber">practice_app.migrations.0010_alter_museumapicsv_accessionnumber</a>
 </li>
-        <li><a href="practice_app.html#module-practice_app.models">practice_app.models</a>
+        <li><a href="models.html#module-practice_app.models">practice_app.models</a>, <a href="practice_app.html#module-practice_app.models">[1]</a>
 </li>
         <li><a href="practice_app.html#module-practice_app.urls">practice_app.urls</a>
 </li>
         <li><a href="practice_app.html#module-practice_app.utils">practice_app.utils</a>
 </li>
-        <li><a href="practice_app.html#module-practice_app.views">practice_app.views</a>
+        <li><a href="practice_app.html#module-practice_app.views">practice_app.views</a>, <a href="views.html#module-practice_app.views">[1]</a>
+</li>
+        <li><a href="tests.html#module-tests">tests</a>
+</li>
+        <li><a href="tests.html#module-tests.test_views">tests.test_views</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="practice_app.html#practice_app.models.MuseumAPICSV">MuseumAPICSV (class in practice_app.models)</a>
+      <li><a href="models.html#practice_app.models.MuseumAPICSV">MuseumAPICSV (class in practice_app.models)</a>, <a href="practice_app.html#practice_app.models.MuseumAPICSV">[1]</a>
 </li>
-      <li><a href="practice_app.html#practice_app.models.MuseumAPICSV.DoesNotExist">MuseumAPICSV.DoesNotExist</a>
+      <li><a href="models.html#practice_app.models.MuseumAPICSV.DoesNotExist">MuseumAPICSV.DoesNotExist</a>, <a href="practice_app.html#practice_app.models.MuseumAPICSV.DoesNotExist">[1]</a>
 </li>
-      <li><a href="practice_app.html#practice_app.models.MuseumAPICSV.MultipleObjectsReturned">MuseumAPICSV.MultipleObjectsReturned</a>
+      <li><a href="models.html#practice_app.models.MuseumAPICSV.MultipleObjectsReturned">MuseumAPICSV.MultipleObjectsReturned</a>, <a href="practice_app.html#practice_app.models.MuseumAPICSV.MultipleObjectsReturned">[1]</a>
 </li>
   </ul></td>
 </tr></table>
@@ -464,6 +464,12 @@
 <h2 id="O">O</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="tests.html#tests.test_views.TestCSVEditRowView.obj_id">obj_id (tests.test_views.TestCSVEditRowView attribute)</a>
+
+      <ul>
+        <li><a href="tests.html#tests.test_views.TestCSVRowDeleteView.obj_id">(tests.test_views.TestCSVRowDeleteView attribute)</a>
+</li>
+      </ul></li>
       <li><a href="practice_app.html#practice_app.models.MuseumAPICSV.objectBeginDate">objectBeginDate (practice_app.models.MuseumAPICSV attribute)</a>
 </li>
       <li><a href="practice_app.html#practice_app.models.MuseumAPICSV.objectDate">objectDate (practice_app.models.MuseumAPICSV attribute)</a>
@@ -474,12 +480,8 @@
 </li>
       <li><a href="practice_app.html#practice_app.models.MuseumAPICSV.objectName">objectName (practice_app.models.MuseumAPICSV attribute)</a>
 </li>
-      <li><a href="practice_app.html#practice_app.models.FileModel.objects">objects (practice_app.models.FileModel attribute)</a>
-
-      <ul>
-        <li><a href="practice_app.html#practice_app.models.MuseumAPICSV.objects">(practice_app.models.MuseumAPICSV attribute)</a>
+      <li><a href="practice_app.html#practice_app.models.MuseumAPICSV.objects">objects (practice_app.models.MuseumAPICSV attribute)</a>
 </li>
-      </ul></li>
       <li><a href="practice_app.html#practice_app.models.MuseumAPICSV.objectURL">objectURL (practice_app.models.MuseumAPICSV attribute)</a>
 </li>
       <li><a href="practice_app.html#practice_app.models.MuseumAPICSV.objectWikidata_URL">objectWikidata_URL (practice_app.models.MuseumAPICSV attribute)</a>
@@ -517,6 +519,8 @@
       <li><a href="practice_app.html#practice_app.models.MuseumAPICSV.period">period (practice_app.models.MuseumAPICSV attribute)</a>
 </li>
       <li><a href="practice_app.html#practice_app.views.CSVEditRowView.pk_url_kwarg">pk_url_kwarg (practice_app.views.CSVEditRowView attribute)</a>
+</li>
+      <li><a href="tests.html#tests.test_views.populate_tmp_data">populate_tmp_data() (in module tests.test_views)</a>
 </li>
       <li><a href="practice_app.html#practice_app.models.MuseumAPICSV.portfolio">portfolio (practice_app.models.MuseumAPICSV attribute)</a>
 </li>
@@ -624,7 +628,7 @@
     practice_app.models
 
       <ul>
-        <li><a href="practice_app.html#module-practice_app.models">module</a>
+        <li><a href="models.html#module-practice_app.models">module</a>, <a href="practice_app.html#module-practice_app.models">[1]</a>
 </li>
       </ul></li>
       <li>
@@ -645,7 +649,7 @@
     practice_app.views
 
       <ul>
-        <li><a href="practice_app.html#module-practice_app.views">module</a>
+        <li><a href="practice_app.html#module-practice_app.views">module</a>, <a href="views.html#module-practice_app.views">[1]</a>
 </li>
       </ul></li>
       <li><a href="practice_app.html#practice_app.apps.PracticeAppConfig">PracticeAppConfig (class in practice_app.apps)</a>
@@ -698,12 +702,24 @@
 <h2 id="S">S</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="tests.html#tests.test_views.TestCSVAddNewRowView.setUpTestData">setUpTestData() (tests.test_views.TestCSVAddNewRowView class method)</a>
+
+      <ul>
+        <li><a href="tests.html#tests.test_views.TestCSVEditRowView.setUpTestData">(tests.test_views.TestCSVEditRowView class method)</a>
+</li>
+        <li><a href="tests.html#tests.test_views.TestCSVRowDeleteView.setUpTestData">(tests.test_views.TestCSVRowDeleteView class method)</a>
+</li>
+        <li><a href="tests.html#tests.test_views.TestCSVUploadFileView.setUpTestData">(tests.test_views.TestCSVUploadFileView class method)</a>
+</li>
+        <li><a href="tests.html#tests.test_views.TestListCSVContentView.setUpTestData">(tests.test_views.TestListCSVContentView class method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="practice_app.html#practice_app.models.MuseumAPICSV.state">state (practice_app.models.MuseumAPICSV attribute)</a>
 </li>
       <li><a href="practice_app.html#practice_app.models.MuseumAPICSV.subregion">subregion (practice_app.models.MuseumAPICSV attribute)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="practice_app.html#practice_app.views.CSVAddNewRowView.success_url">success_url (practice_app.views.CSVAddNewRowView attribute)</a>
 
       <ul>
@@ -724,8 +740,96 @@
         <li><a href="practice_app.html#practice_app.views.CSVEditRowView.template_name">(practice_app.views.CSVEditRowView attribute)</a>
 </li>
       </ul></li>
+      <li><a href="tests.html#tests.test_views.TestCSVAddNewRowView.test_add_existing_row">test_add_existing_row() (tests.test_views.TestCSVAddNewRowView method)</a>
+</li>
+      <li><a href="tests.html#tests.test_views.TestCSVAddNewRowView.test_add_new_row">test_add_new_row() (tests.test_views.TestCSVAddNewRowView method)</a>
+</li>
+      <li><a href="tests.html#tests.test_views.TestCSVRowDeleteView.test_delete_existing_row">test_delete_existing_row() (tests.test_views.TestCSVRowDeleteView method)</a>
+</li>
+      <li><a href="tests.html#tests.test_views.TestCSVRowDeleteView.test_delete_non_existent_row">test_delete_non_existent_row() (tests.test_views.TestCSVRowDeleteView method)</a>
+</li>
+      <li><a href="tests.html#tests.test_views.TestCSVEditRowView.test_edit_non_existent_row">test_edit_non_existent_row() (tests.test_views.TestCSVEditRowView method)</a>
+</li>
+      <li><a href="tests.html#tests.test_views.TestCSVEditRowView.test_edit_row">test_edit_row() (tests.test_views.TestCSVEditRowView method)</a>
+</li>
+      <li><a href="tests.html#tests.test_views.TestListCSVContentView.test_lists_all_rows">test_lists_all_rows() (tests.test_views.TestListCSVContentView method)</a>
+</li>
+      <li><a href="tests.html#tests.test_views.TestListCSVContentView.test_response_is_not_ok_when_request_method_is_not_get">test_response_is_not_ok_when_request_method_is_not_get() (tests.test_views.TestListCSVContentView method)</a>
+</li>
+      <li><a href="tests.html#tests.test_views.TestCSVAddNewRowView.test_response_is_not_ok_when_request_method_is_not_post">test_response_is_not_ok_when_request_method_is_not_post() (tests.test_views.TestCSVAddNewRowView method)</a>
+
+      <ul>
+        <li><a href="tests.html#tests.test_views.TestCSVEditRowView.test_response_is_not_ok_when_request_method_is_not_post">(tests.test_views.TestCSVEditRowView method)</a>
+</li>
+        <li><a href="tests.html#tests.test_views.TestCSVRowDeleteView.test_response_is_not_ok_when_request_method_is_not_post">(tests.test_views.TestCSVRowDeleteView method)</a>
+</li>
+        <li><a href="tests.html#tests.test_views.TestCSVUploadFileView.test_response_is_not_ok_when_request_method_is_not_post">(tests.test_views.TestCSVUploadFileView method)</a>
+</li>
+      </ul></li>
+      <li><a href="tests.html#tests.test_views.TestCSVUploadFileView.test_upload_csv_file">test_upload_csv_file() (tests.test_views.TestCSVUploadFileView method)</a>
+</li>
+      <li><a href="tests.html#tests.test_views.TestCSVUploadFileView.test_upload_when_file_is_not_csv">test_upload_when_file_is_not_csv() (tests.test_views.TestCSVUploadFileView method)</a>
+</li>
+      <li><a href="tests.html#tests.test_views.TestCSVAddNewRowView.test_url_accessible_by_name">test_url_accessible_by_name() (tests.test_views.TestCSVAddNewRowView method)</a>
+
+      <ul>
+        <li><a href="tests.html#tests.test_views.TestCSVEditRowView.test_url_accessible_by_name">(tests.test_views.TestCSVEditRowView method)</a>
+</li>
+        <li><a href="tests.html#tests.test_views.TestCSVRowDeleteView.test_url_accessible_by_name">(tests.test_views.TestCSVRowDeleteView method)</a>
+</li>
+        <li><a href="tests.html#tests.test_views.TestCSVUploadFileView.test_url_accessible_by_name">(tests.test_views.TestCSVUploadFileView method)</a>
+</li>
+        <li><a href="tests.html#tests.test_views.TestListCSVContentView.test_url_accessible_by_name">(tests.test_views.TestListCSVContentView method)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="tests.html#tests.test_views.TestCSVAddNewRowView.test_url_exists">test_url_exists() (tests.test_views.TestCSVAddNewRowView method)</a>
+
+      <ul>
+        <li><a href="tests.html#tests.test_views.TestCSVEditRowView.test_url_exists">(tests.test_views.TestCSVEditRowView method)</a>
+</li>
+        <li><a href="tests.html#tests.test_views.TestCSVRowDeleteView.test_url_exists">(tests.test_views.TestCSVRowDeleteView method)</a>
+</li>
+        <li><a href="tests.html#tests.test_views.TestCSVUploadFileView.test_url_exists">(tests.test_views.TestCSVUploadFileView method)</a>
+</li>
+        <li><a href="tests.html#tests.test_views.TestListCSVContentView.test_url_exists">(tests.test_views.TestListCSVContentView method)</a>
+</li>
+      </ul></li>
+      <li><a href="tests.html#tests.test_views.TestCSVAddNewRowView.test_uses_correct_template">test_uses_correct_template() (tests.test_views.TestCSVAddNewRowView method)</a>
+
+      <ul>
+        <li><a href="tests.html#tests.test_views.TestCSVEditRowView.test_uses_correct_template">(tests.test_views.TestCSVEditRowView method)</a>
+</li>
+        <li><a href="tests.html#tests.test_views.TestCSVUploadFileView.test_uses_correct_template">(tests.test_views.TestCSVUploadFileView method)</a>
+</li>
+        <li><a href="tests.html#tests.test_views.TestListCSVContentView.test_uses_correct_template">(tests.test_views.TestListCSVContentView method)</a>
+</li>
+      </ul></li>
+      <li><a href="tests.html#tests.test_views.TestCSVAddNewRowView">TestCSVAddNewRowView (class in tests.test_views)</a>
+</li>
+      <li><a href="tests.html#tests.test_views.TestCSVEditRowView">TestCSVEditRowView (class in tests.test_views)</a>
+</li>
+      <li><a href="tests.html#tests.test_views.TestCSVRowDeleteView">TestCSVRowDeleteView (class in tests.test_views)</a>
+</li>
+      <li><a href="tests.html#tests.test_views.TestCSVUploadFileView">TestCSVUploadFileView (class in tests.test_views)</a>
+</li>
+      <li><a href="tests.html#tests.test_views.TestListCSVContentView">TestListCSVContentView (class in tests.test_views)</a>
+</li>
+      <li>
+    tests
+
+      <ul>
+        <li><a href="tests.html#module-tests">module</a>
+</li>
+      </ul></li>
+      <li>
+    tests.test_views
+
+      <ul>
+        <li><a href="tests.html#module-tests.test_views">module</a>
+</li>
+      </ul></li>
       <li><a href="practice_app.html#practice_app.models.MuseumAPICSV.title">title (practice_app.models.MuseumAPICSV attribute)</a>
 </li>
   </ul></td>

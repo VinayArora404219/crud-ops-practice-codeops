@@ -10,13 +10,10 @@ Welcome to HTTP Local Server Practice's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   modules
+   views.rst
+   models.rst
+   tests.rst
 
 
 
-Indices and tables
-==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

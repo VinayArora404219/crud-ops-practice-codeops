@@ -4,11 +4,6 @@ from django.core.validators import FileExtensionValidator
 from django.urls import reverse
 
 
-class FileModel(models.Model):
-    csv_file_name = models.CharField(max_length=50)
-    csv_file = models.BinaryField()
-
-
 GENDER_CHOICES = (
     ('male', 'Male'),
     ('female', 'Female'),

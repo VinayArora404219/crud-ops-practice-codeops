@@ -34,7 +34,7 @@ def list_csv_content_view(request):
 
 class CSVEditRowView(UpdateView):
     """
-    Class that allows to edit a CSV row.
+    View that allows the user to edit a CSV row.
     """
     queryset = MuseumAPICSV.objects.all()
     pk_url_kwarg = 'objectId'
@@ -50,7 +50,7 @@ class CSVEditRowView(UpdateView):
 
 class CSVAddNewRowView(CreateView):
     """
-     Class that allows to add new row to the CSV.
+     View that allows the user to add new row to the CSV.
     """
     queryset = MuseumAPICSV.objects.all()
     form_class = EditOrCreateCSVRowForm
