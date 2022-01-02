@@ -18,8 +18,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Views" href="views.html" />
-    <link rel="prev" title="HTTPLocalServerPractice" href="modules.html" /> 
+    <link rel="prev" title="Models" href="models.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -39,17 +38,14 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">HTTPLocalServerPractice</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">tests package</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-tests.test_views">tests.test_views module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-tests">Module contents</a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="views.html">Views</a></li>
 <li class="toctree-l1"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">tests package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-tests.test_views">tests.test_views module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-tests">Module contents</a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -66,7 +62,6 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="modules.html">HTTPLocalServerPractice</a> &raquo;</li>
       <li>tests package</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/tests.rst.txt" rel="nofollow"> View page source</a>
@@ -88,6 +83,7 @@
 <dt class="sig sig-object py" id="tests.test_views.TestCSVAddNewRowView">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tests.test_views.</span></span><span class="sig-name descname"><span class="pre">TestCSVAddNewRowView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_views.TestCSVAddNewRowView" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<p>Tests functionality of CSVAddNewRowView class.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="tests.test_views.TestCSVAddNewRowView.setUpTestData">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">setUpTestData</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_views.TestCSVAddNewRowView.setUpTestData" title="Permalink to this definition"></a></dt>
@@ -97,7 +93,7 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="tests.test_views.TestCSVAddNewRowView.test_add_existing_row">
 <span class="sig-name descname"><span class="pre">test_add_existing_row</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_views.TestCSVAddNewRowView.test_add_existing_row" title="Permalink to this definition"></a></dt>
-<dd><p>Test if it raises IntegrityError when trying to update a non-existing row.</p>
+<dd><p>Test if the view raises error if the user tries to add an existing row.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -107,8 +103,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="tests.test_views.TestCSVAddNewRowView.test_response_is_not_ok_when_request_method_is_not_post">
-<span class="sig-name descname"><span class="pre">test_response_is_not_ok_when_request_method_is_not_post</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_views.TestCSVAddNewRowView.test_response_is_not_ok_when_request_method_is_not_post" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="tests.test_views.TestCSVAddNewRowView.test_response_invalid_for_disallowed_methods">
+<span class="sig-name descname"><span class="pre">test_response_invalid_for_disallowed_methods</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_views.TestCSVAddNewRowView.test_response_invalid_for_disallowed_methods" title="Permalink to this definition"></a></dt>
 <dd><p>Tests whether the response is not ok when request method is
 not post.</p>
 </dd></dl>
@@ -137,6 +133,12 @@ not post.</p>
 <dt class="sig sig-object py" id="tests.test_views.TestCSVEditRowView">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tests.test_views.</span></span><span class="sig-name descname"><span class="pre">TestCSVEditRowView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_views.TestCSVEditRowView" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<p>Tests functionality of CSVEditRowView class.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tests.test_views.TestCSVEditRowView.base_dir">
+<span class="sig-name descname"><span class="pre">base_dir</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/home/vinay/PycharmProjects/HTTPLocalServerPractice/docs/tests/Truth'</span></em><a class="headerlink" href="#tests.test_views.TestCSVEditRowView.base_dir" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="tests.test_views.TestCSVEditRowView.obj_id">
 <span class="sig-name descname"><span class="pre">obj_id</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#tests.test_views.TestCSVEditRowView.obj_id" title="Permalink to this definition"></a></dt>
@@ -161,8 +163,8 @@ not post.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="tests.test_views.TestCSVEditRowView.test_response_is_not_ok_when_request_method_is_not_post">
-<span class="sig-name descname"><span class="pre">test_response_is_not_ok_when_request_method_is_not_post</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_views.TestCSVEditRowView.test_response_is_not_ok_when_request_method_is_not_post" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="tests.test_views.TestCSVEditRowView.test_response_invalid_for_disallowed_methods">
+<span class="sig-name descname"><span class="pre">test_response_invalid_for_disallowed_methods</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_views.TestCSVEditRowView.test_response_invalid_for_disallowed_methods" title="Permalink to this definition"></a></dt>
 <dd><p>Tests whether the response is not ok when request method is
 not post.</p>
 </dd></dl>
@@ -191,6 +193,12 @@ not post.</p>
 <dt class="sig sig-object py" id="tests.test_views.TestCSVRowDeleteView">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tests.test_views.</span></span><span class="sig-name descname"><span class="pre">TestCSVRowDeleteView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_views.TestCSVRowDeleteView" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<p>Tests functionality of csv_row_delete_view function.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tests.test_views.TestCSVRowDeleteView.base_dir">
+<span class="sig-name descname"><span class="pre">base_dir</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/home/vinay/PycharmProjects/HTTPLocalServerPractice/docs/tests/Truth'</span></em><a class="headerlink" href="#tests.test_views.TestCSVRowDeleteView.base_dir" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="tests.test_views.TestCSVRowDeleteView.obj_id">
 <span class="sig-name descname"><span class="pre">obj_id</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#tests.test_views.TestCSVRowDeleteView.obj_id" title="Permalink to this definition"></a></dt>
@@ -205,18 +213,19 @@ not post.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="tests.test_views.TestCSVRowDeleteView.test_delete_existing_row">
 <span class="sig-name descname"><span class="pre">test_delete_existing_row</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_views.TestCSVRowDeleteView.test_delete_existing_row" title="Permalink to this definition"></a></dt>
-<dd><p>Test functionality of deleting an existing row.</p>
+<dd><p>Tests the functionality of deleting an existing row.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="tests.test_views.TestCSVRowDeleteView.test_delete_non_existent_row">
 <span class="sig-name descname"><span class="pre">test_delete_non_existent_row</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_views.TestCSVRowDeleteView.test_delete_non_existent_row" title="Permalink to this definition"></a></dt>
-<dd><p>Test whether deleting a non existent row will raise an Exception.</p>
+<dd><p>Tests whether the server raises an exception when trying to delete
+a non-existent row.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="tests.test_views.TestCSVRowDeleteView.test_response_is_not_ok_when_request_method_is_not_post">
-<span class="sig-name descname"><span class="pre">test_response_is_not_ok_when_request_method_is_not_post</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_views.TestCSVRowDeleteView.test_response_is_not_ok_when_request_method_is_not_post" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="tests.test_views.TestCSVRowDeleteView.test_response_invalid_for_disallowed_methods">
+<span class="sig-name descname"><span class="pre">test_response_invalid_for_disallowed_methods</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_views.TestCSVRowDeleteView.test_response_invalid_for_disallowed_methods" title="Permalink to this definition"></a></dt>
 <dd><p>Tests whether the response is not ok when request method is
 not post.</p>
 </dd></dl>
@@ -239,6 +248,7 @@ not post.</p>
 <dt class="sig sig-object py" id="tests.test_views.TestCSVUploadFileView">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tests.test_views.</span></span><span class="sig-name descname"><span class="pre">TestCSVUploadFileView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_views.TestCSVUploadFileView" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<p>Tests functionality of csv_file_upload_view function.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="tests.test_views.TestCSVUploadFileView.setUpTestData">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">setUpTestData</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_views.TestCSVUploadFileView.setUpTestData" title="Permalink to this definition"></a></dt>
@@ -246,8 +256,8 @@ not post.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="tests.test_views.TestCSVUploadFileView.test_response_is_not_ok_when_request_method_is_not_post">
-<span class="sig-name descname"><span class="pre">test_response_is_not_ok_when_request_method_is_not_post</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_views.TestCSVUploadFileView.test_response_is_not_ok_when_request_method_is_not_post" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="tests.test_views.TestCSVUploadFileView.test_response_invalid_for_disallowed_methods">
+<span class="sig-name descname"><span class="pre">test_response_invalid_for_disallowed_methods</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_views.TestCSVUploadFileView.test_response_invalid_for_disallowed_methods" title="Permalink to this definition"></a></dt>
 <dd><p>Tests whether the response is not ok when request method is
 not post.</p>
 </dd></dl>
@@ -259,8 +269,8 @@ not post.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="tests.test_views.TestCSVUploadFileView.test_upload_when_file_is_not_csv">
-<span class="sig-name descname"><span class="pre">test_upload_when_file_is_not_csv</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_views.TestCSVUploadFileView.test_upload_when_file_is_not_csv" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="tests.test_views.TestCSVUploadFileView.test_upload_non_csv">
+<span class="sig-name descname"><span class="pre">test_upload_non_csv</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_views.TestCSVUploadFileView.test_upload_non_csv" title="Permalink to this definition"></a></dt>
 <dd><p>Test whether the view raises ValidationError when user tries to upload a
 non CSV file.</p>
 </dd></dl>
@@ -289,7 +299,12 @@ non CSV file.</p>
 <dt class="sig sig-object py" id="tests.test_views.TestListCSVContentView">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tests.test_views.</span></span><span class="sig-name descname"><span class="pre">TestListCSVContentView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_views.TestListCSVContentView" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
-<p>Tests the functionality of list_csv_content_view.</p>
+<p>Tests the functionality of list_csv_content_view function.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tests.test_views.TestListCSVContentView.base_dir">
+<span class="sig-name descname"><span class="pre">base_dir</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/home/vinay/PycharmProjects/HTTPLocalServerPractice/docs/tests/Truth'</span></em><a class="headerlink" href="#tests.test_views.TestListCSVContentView.base_dir" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="tests.test_views.TestListCSVContentView.setUpTestData">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">setUpTestData</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_views.TestListCSVContentView.setUpTestData" title="Permalink to this definition"></a></dt>
@@ -303,8 +318,8 @@ non CSV file.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="tests.test_views.TestListCSVContentView.test_response_is_not_ok_when_request_method_is_not_get">
-<span class="sig-name descname"><span class="pre">test_response_is_not_ok_when_request_method_is_not_get</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_views.TestListCSVContentView.test_response_is_not_ok_when_request_method_is_not_get" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="tests.test_views.TestListCSVContentView.test_response_invalid_for_disallowed_methods">
+<span class="sig-name descname"><span class="pre">test_response_invalid_for_disallowed_methods</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_views.TestListCSVContentView.test_response_invalid_for_disallowed_methods" title="Permalink to this definition"></a></dt>
 <dd><p>Tests whether the response is not ok when request method is
 not get.</p>
 </dd></dl>
@@ -350,8 +365,7 @@ not get.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="modules.html" class="btn btn-neutral float-left" title="HTTPLocalServerPractice" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="views.html" class="btn btn-neutral float-right" title="Views" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="models.html" class="btn btn-neutral float-left" title="Models" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

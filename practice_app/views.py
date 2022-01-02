@@ -1,3 +1,7 @@
+"""
+    Contains all the views for performing CRUD operations.
+"""
+
 import csv
 from io import TextIOWrapper
 
@@ -109,7 +113,6 @@ def csv_file_upload_view(request):
 
         csv_content = f.read()
         list_of_dicts = list(csv.DictReader(csv_content.split('\n')))
-        headings = list_of_dicts[0].keys()
         rows = [x.values() for x in list_of_dicts]
 
         for row in rows:
@@ -187,6 +190,3 @@ def csv_file_upload_view(request):
                 pass
 
         return redirect('practice_app:index')
-
-
-
