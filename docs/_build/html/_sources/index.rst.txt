@@ -10,8 +10,8 @@ Welcome to HTTP Local Server Practice's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   views.rst
    models.rst
+   views.rst
    tests.rst
 
 

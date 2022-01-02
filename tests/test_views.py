@@ -1,3 +1,7 @@
+"""
+    Contains tests for views.py
+"""
+
 import csv
 import json
 import logging
@@ -27,8 +31,8 @@ def populate_tmp_data(csv_file_path):
     :param csv_file_path: path of the csv file from which data needs to be populated
     """
 
-    with open(csv_file_path, 'r') as f:
-        csv_content = f.read()
+    with open(csv_file_path, 'r', encoding='utf-8') as file_ptr:
+        csv_content = file_ptr.read()
 
     list_of_dicts = list(csv.DictReader(csv_content.split('\n')))
     rows = [x.values() for x in list_of_dicts]
@@ -108,15 +112,14 @@ def populate_tmp_data(csv_file_path):
 
 class TestListCSVContentView(TestCase):
     """
-    Tests the functionality of list_csv_content_view.
+    Tests the functionality of list_csv_content_view function.
     """
-
+    base_dir = os.path.abspath('tests/Truth/')
     @classmethod
     def setUpTestData(cls):
         """
         Sets up temporary data in the test database for testing.
         """
-        cls.base_dir = os.path.abspath('tests/Truth/')
         populate_tmp_data(os.path.join(cls.base_dir, 'museum_data.csv'))
 
     def test_url_exists(self):
@@ -141,7 +144,7 @@ class TestListCSVContentView(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'practice_app/index.html')
 
-    def test_lists_all_rows(self):
+    def test_list_all_rows(self):
         """
         Tests whether the view lists all the rows correctly.
         """
@@ -158,7 +161,7 @@ class TestListCSVContentView(TestCase):
         self.assertTrue(response.context['headings'], headings)
         self.assertTrue(response.context['csv_objs'], museum_api_csv_objs)
 
-    def test_invalid_response(self):
+    def test_response_invalid_for_disallowed_methods(self):
         """
         Tests whether the response is not ok when request method is
         not get.
@@ -175,7 +178,11 @@ class TestListCSVContentView(TestCase):
 
 
 class TestCSVRowDeleteView(TestCase):
+    """
+    Tests functionality of csv_row_delete_view function.
+    """
     obj_id = 1
+    base_dir = os.path.abspath('tests/Truth/')
 
     @classmethod
     def setUpTestData(cls):
@@ -183,7 +190,6 @@ class TestCSVRowDeleteView(TestCase):
         Sets up temporary data in the test database for testing.
         """
 
-        cls.base_dir = os.path.abspath('tests/Truth/')
         populate_tmp_data(os.path.join(cls.base_dir, 'museum_data.csv'))
 
     def test_url_exists(self):
@@ -197,7 +203,9 @@ class TestCSVRowDeleteView(TestCase):
         """
         Tests whether the url is accessible by name.
         """
-        response = self.client.get(reverse('practice_app:delete_row', kwargs={'objectId': self.obj_id}))
+        response = self.client.get(
+            reverse('practice_app:delete_row', kwargs={'objectId': self.obj_id})
+        )
         self.assertEqual(response.status_code, 200)
 
     def test_delete_existing_row(self):
@@ -226,7 +234,7 @@ class TestCSVRowDeleteView(TestCase):
             'No MuseumAPICSV matches the given query.'
         )
 
-    def test_invalid_response(self):
+    def test_response_invalid_for_disallowed_methods(self):
         """
         Tests whether the response is not ok when request method is
         not post.
@@ -241,6 +249,9 @@ class TestCSVRowDeleteView(TestCase):
 
 
 class TestCSVUploadFileView(TestCase):
+    """
+    Tests functionality of csv_file_upload_view function.
+    """
     @classmethod
     def setUpTestData(cls):
         """
@@ -277,11 +288,18 @@ class TestCSVUploadFileView(TestCase):
         """
         file_obj = None
         try:
-            with open(os.path.join(self.base_dir, 'museum_data.csv'), 'r') as f:
-                file_obj = SimpleUploadedFile('museum_data.csv', f.read().encode())
+            with open(
+                    os.path.join(
+                        self.base_dir,
+                        'museum_data.csv',
+                    ),
+                    'r',
+                    encoding='utf-8'
+            ) as file_ptr:
+                file_obj = SimpleUploadedFile('museum_data.csv', file_ptr.read().encode())
 
         except FileNotFoundError as fn_fe:
-            logging.error(f'File not found :{fn_fe.args[-1]}')
+            logging.error('File not found %s:', {fn_fe.args[-1]})
 
         response = self.client.post(reverse('practice_app:upload_csv'), data={
             'csv_file': [file_obj]
@@ -293,11 +311,18 @@ class TestCSVUploadFileView(TestCase):
         Test whether the view raises ValidationError when user tries to upload a
         non CSV file.
         """
-        file_obj = SimpleUploadedFile('museum_data.java', "Not a csv".encode())
-        with self.assertRaises(ValidationError):
-            response = self.client.post(reverse('practice_app:upload_csv'), data={'csv_file': [file_obj]})
+        file_obj = SimpleUploadedFile(
+            'museum_data.java',
+            "Not a csv".encode()
+        )
 
-    def test_invalid_response(self):
+        with self.assertRaises(ValidationError):
+            self.client.post(
+                reverse('practice_app:upload_csv'),
+                data={'csv_file': [file_obj]}
+            )
+
+    def test_response_invalid_for_disallowed_methods(self):
         """
         Tests whether the response is not ok when request method is
         not post.
@@ -312,6 +337,10 @@ class TestCSVUploadFileView(TestCase):
 
 
 class TestCSVEditRowView(TestCase):
+    """
+    Tests functionality of CSVEditRowView class.
+    """
+    base_dir = os.path.abspath('tests/Truth/')
     obj_id = 1
 
     @classmethod
@@ -319,7 +348,6 @@ class TestCSVEditRowView(TestCase):
         """
         Sets up temporary data in the test database for testing.
         """
-        cls.base_dir = os.path.abspath('tests/Truth/')
         populate_tmp_data(os.path.join(cls.base_dir, 'museum_data.csv'))
 
     def test_url_exists(self):
@@ -350,10 +378,14 @@ class TestCSVEditRowView(TestCase):
         """
         row_data = None
         try:
-            with open(os.path.join(self.base_dir, 'csv_edit_row_data.json'), 'r') as f:
-                row_data = json.load(f)
+            with open(
+                    os.path.join(self.base_dir, 'csv_edit_row_data.json'),
+                    'r',
+                    encoding='utf-8'
+            ) as file_ptr:
+                row_data = json.load(file_ptr)
         except FileNotFoundError as fn_fe:
-            logging.error(f'Error file not found :{fn_fe.args[-1]}')
+            logging.error('File not found %s:', {fn_fe.args[-1]})
 
         for key, value in row_data.items():
             if value is None:
@@ -383,7 +415,7 @@ class TestCSVEditRowView(TestCase):
             'No museum apicsv found matching the query'
         )
 
-    def test_invalid_response(self):
+    def test_response_invalid_for_disallowed_methods(self):
         """
         Tests whether the response is not ok when request method is
         not post.
@@ -398,6 +430,9 @@ class TestCSVEditRowView(TestCase):
 
 
 class TestCSVAddNewRowView(TestCase):
+    """
+    Tests functionality of CSVAddNewRowView class.
+    """
     @classmethod
     def setUpTestData(cls):
         """
@@ -434,10 +469,14 @@ class TestCSVAddNewRowView(TestCase):
         """
         row_data = None
         try:
-            with open(os.path.join(self.base_dir, 'csv_add_row_data.json'), 'r') as f:
-                row_data = json.load(f)
+            with open(
+                    os.path.join(self.base_dir, 'csv_add_row_data.json'),
+                    'r',
+                    encoding='utf-8'
+            ) as file_ptr:
+                row_data = json.load(file_ptr)
         except FileNotFoundError as fn_fe:
-            logging.error(f'Error file not found :{fn_fe.args[-1]}')
+            logging.error('File not found %s:', {fn_fe.args[-1]})
 
         for key, value in row_data.items():
             if value is None:
@@ -446,16 +485,21 @@ class TestCSVAddNewRowView(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertEqual(MuseumAPICSV.objects.last().objectId, 16)
 
+
     def test_add_existing_row(self):
         """
-        Test if it raises IntegrityError when trying to add an existing row.
+        Test if the view raises error if the user tries to add an existing row.
         """
         try:
-            with open(os.path.join(self.base_dir, 'csv_add_existing_row.json')) as f:
-                csv_row_content = json.load(f)
+            with open(
+                os.path.join(self.base_dir, 'csv_add_existing_row.json'),
+                'r',
+                encoding='utf-8'
+            ) as file_ptr:
+                csv_row_content = json.load(file_ptr)
 
         except FileNotFoundError as fn_fe:
-            logging.error(f'Error file not found :{fn_fe.args[-1]}')
+            logging.error('File not found %s:', {fn_fe.args[-1]})
             sys.exit(1)
 
         for key, value in csv_row_content.items():
@@ -471,7 +515,7 @@ class TestCSVAddNewRowView(TestCase):
             'Museum apicsv with this ObjectId already exists.'
         )
 
-    def test_invalid_response(self):
+    def test_response_invalid_for_disallowed_methods(self):
         """
         Tests whether the response is not ok when request method is
         not post.

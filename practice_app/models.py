@@ -1,7 +1,4 @@
 from django.db import models
-from django.core.validators import FileExtensionValidator
-# from .validators import validate_csv
-from django.urls import reverse
 
 
 GENDER_CHOICES = (
