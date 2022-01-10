@@ -1,92 +1,198 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block head_extra %}
+  <link rel="stylesheet" href="{% static 'practice_app/css/index.css' %}" />
+{% endblock %}
 
 {% block content %}
-  <div class="container">
-    <table class="table table-striped">
-    <thead class="thead-dark">
-      <tr>
-        {% for heading in headings %}
-            <th scope="col">{{ heading }}</th>
-        {% endfor %}
-        <th scope="col">Delete</th>
-        <th scope="col">Edit</th>
-      </tr>
-    </thead>
-    <tbody>
-        {% for obj in csv_objs %}
-          <tr>
-            <td>{{ obj.objectId }}</td>
-            <td>{{ obj.isHighlight }}</td>
-            <td>{{ obj.accessionNumber }}</td>
-            <td>{{ obj.accessionYear }}</td>
-            <td>{{ obj.isPublicDomain }}</td>
-            <td>{{ obj.primaryImage }}</td>
-            <td>{{ obj.primaryImageSmall }}</td>
-            <td>{{ obj.additionalImages }}</td>
-            <td>{{ obj.department }}</td>
-            <td>{{ obj.objectName }}</td>
-            <td>{{ obj.title }}</td>
-            <td>{{ obj.culture }}</td>
-            <td>{{ obj.period }}</td>
-            <td>{{ obj.dynasty }}</td>
-            <td>{{ obj.reign }}</td>
-            <td>{{ obj.portfolio }}</td>
-            <td>{{ obj.artistRole }}</td>
-            <td>{{ obj.artistPrefix }}</td>
-            <td>{{ obj.artistDisplayName }}</td>
-            <td>{{ obj.artistDisplayBio }}</td>
-            <td>{{ obj.artistSuffix }}</td>
-            <td>{{ obj.artistAlphaSort }}</td>
-            <td>{{ obj.artistNationality }}</td>
-            <td>{{ obj.artistBeginDate }}</td>
-            <td>{{ obj.artistEndDate }}</td>
-            <td>{{ obj.artistGender }}</td>
-            <td>{{ obj.artistWikidata_URL }}</td>
-            <td>{{ obj.artistULAN_URL }}</td>
-            <td>{{ obj.objectDate }}</td>
-            <td>{{ obj.objectBeginDate }}</td>
-            <td>{{ obj.objectEndDate }}</td>
-            <td>{{ obj.medium }}</td>
-            <td>{{ obj.dimensions }}</td>
-            <td>{{ obj.measurements }}</td>
-            <td>{{ obj.creditLine }}</td>
-            <td>{{ obj.geographyType }}</td>
-            <td>{{ obj.city }}</td>
-            <td>{{ obj.state }}</td>
-            <td>{{ obj.county }}</td>
-            <td>{{ obj.country }}</td>
-            <td>{{ obj.region }}</td>
-            <td>{{ obj.subregion }}</td>
-            <td>{{ obj.locale }}</td>
-            <td>{{ obj.locus }}</td>
-            <td>{{ obj.excavation }}</td>
-            <td>{{ obj.river }}</td>
-            <td>{{ obj.classification }}</td>
-            <td>{{ obj.rightsAndReproduction }}</td>
-            <td>{{ obj.linkResource }}</td>
-            <td>{{ obj.metadataDate }}</td>
-            <td>{{ obj.repository }}</td>
-            <td>{{ obj.objectURL }}</td>
-            <td>{{ obj.tags }}</td>
-            <td>{{ obj.objectWikidata_URL }}</td>
-            <td>{{ obj.isTimelineWork }}</td>
-            <td>{{ obj.galleryNumber }}</td>
-            <td>{{ obj.constituentID }}</td>
-            <td>{{ obj.role }}</td>
-            <td>{{ obj.name }}</td>
-            <td>{{ obj.constituentULAN_URL }}</td>
-            <td>{{ obj.constituentWikidata_URL }}</td>
-            <td>{{ obj.gender }}</td>
-            <td>
-              <form method="post" action="{% url 'practice_app:delete_row' obj.objectId %}">{% csrf_token %}
-                <button class="btn btn-danger" type="submit">Delete</button>
-              </form>
-            </td>
-            <td><a class="btn btn-primary" href="{% url 'practice_app:edit_row' obj.objectId %}">Edit</a></td>
-          </tr>
-        {% endfor %}
-    </tbody>
-  </table>
-    <a class="btn btn-primary" href="{% url 'practice_app:add_new_row' %}">Add New Row</a>
+<div class="modal fade" id="spinnerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Backing Up</h5>
+
+      </div>
+      <div class="modal-body">
+        <div class="loader"></div>
+      </div>
+    </div>
   </div>
+</div>
+
+<div class="modal fade" id="spinnerRestoreModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Restoring backup</h5>
+
+      </div>
+      <div class="modal-body">
+        <div class="loader"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div id="restoreBackupModal" class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Restore data from S3</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Are you sure you want to restore data to S3?</p>
+            <br />
+            <p class="text-danger">Note: This will overwrite the current data.</p>
+          </div>
+          <div class="modal-footer">
+            <button id="confirm-restore-btn" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#spinnerRestoreModal" data-dismiss="modal" type="button" class="btn btn-primary">Confirm</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="backupModal" class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Backup data to S3</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Are you sure you want to backup the data to S3?</p>
+          </div>
+          <div class="modal-footer">
+            <button id="confirm-backup-btn" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#spinnerModal" data-dismiss="modal" type="button" class="btn btn-primary">Confirm</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <a class="navbar-brand" href="#">Crud App</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+
+      </ul>
+      <button data-toggle="modal" data-target="#backupModal" id="backup-to-s3-btn" class="btn btn-outline-success my-2 my-sm-0 mx-1" type="button">Backup data to S3</button>
+      <button data-toggle="modal" data-target="#restoreBackupModal" id="restore-from-s3-btn" class="btn btn-outline-primary my-2 my-sm-0 mx-1" type="button">Restore data from S3</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    {% if csv_objs %}
+      <table style="margin-top: 76px" class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          {% for heading in headings %}
+              <th scope="col">{{ heading }}</th>
+          {% endfor %}
+          <th scope="col">Delete</th>
+          <th scope="col">Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for obj in csv_objs %}
+            <tr>
+              <td>{{ obj.objectId }}</td>
+              <td>{{ obj.isHighlight }}</td>
+              <td>{{ obj.accessionNumber }}</td>
+              <td>{{ obj.accessionYear }}</td>
+              <td>{{ obj.isPublicDomain }}</td>
+              <td>{{ obj.primaryImage }}</td>
+              <td>{{ obj.primaryImageSmall }}</td>
+              <td>{{ obj.additionalImages }}</td>
+              <td>{{ obj.department }}</td>
+              <td>{{ obj.objectName }}</td>
+              <td>{{ obj.title }}</td>
+              <td>{{ obj.culture }}</td>
+              <td>{{ obj.period }}</td>
+              <td>{{ obj.dynasty }}</td>
+              <td>{{ obj.reign }}</td>
+              <td>{{ obj.portfolio }}</td>
+              <td>{{ obj.artistRole }}</td>
+              <td>{{ obj.artistPrefix }}</td>
+              <td>{{ obj.artistDisplayName }}</td>
+              <td>{{ obj.artistDisplayBio }}</td>
+              <td>{{ obj.artistSuffix }}</td>
+              <td>{{ obj.artistAlphaSort }}</td>
+              <td>{{ obj.artistNationality }}</td>
+              <td>{{ obj.artistBeginDate }}</td>
+              <td>{{ obj.artistEndDate }}</td>
+              <td>{{ obj.artistGender }}</td>
+              <td>{{ obj.artistWikidata_URL }}</td>
+              <td>{{ obj.artistULAN_URL }}</td>
+              <td>{{ obj.objectDate }}</td>
+              <td>{{ obj.objectBeginDate }}</td>
+              <td>{{ obj.objectEndDate }}</td>
+              <td>{{ obj.medium }}</td>
+              <td>{{ obj.dimensions }}</td>
+              <td>{{ obj.measurements }}</td>
+              <td>{{ obj.creditLine }}</td>
+              <td>{{ obj.geographyType }}</td>
+              <td>{{ obj.city }}</td>
+              <td>{{ obj.state }}</td>
+              <td>{{ obj.county }}</td>
+              <td>{{ obj.country }}</td>
+              <td>{{ obj.region }}</td>
+              <td>{{ obj.subregion }}</td>
+              <td>{{ obj.locale }}</td>
+              <td>{{ obj.locus }}</td>
+              <td>{{ obj.excavation }}</td>
+              <td>{{ obj.river }}</td>
+              <td>{{ obj.classification }}</td>
+              <td>{{ obj.rightsAndReproduction }}</td>
+              <td>{{ obj.linkResource }}</td>
+              <td>{{ obj.metadataDate }}</td>
+              <td>{{ obj.repository }}</td>
+              <td>{{ obj.objectURL }}</td>
+              <td>{{ obj.tags }}</td>
+              <td>{{ obj.objectWikidata_URL }}</td>
+              <td>{{ obj.isTimelineWork }}</td>
+              <td>{{ obj.galleryNumber }}</td>
+              <td>{{ obj.constituentID }}</td>
+              <td>{{ obj.role }}</td>
+              <td>{{ obj.name }}</td>
+              <td>{{ obj.constituentULAN_URL }}</td>
+              <td>{{ obj.constituentWikidata_URL }}</td>
+              <td>{{ obj.gender }}</td>
+              <td>
+                <form method="post" action="{% url 'practice_app:delete_row' obj.objectId %}">{% csrf_token %}
+                  <button class="btn btn-danger" type="submit">Delete</button>
+                </form>
+              </td>
+              <td><a class="btn btn-primary" href="{% url 'practice_app:edit_row' obj.objectId %}">Edit</a></td>
+            </tr>
+          {% endfor %}
+      </tbody>
+    </table>
+    <a class="btn btn-primary" href="{% url 'practice_app:add_new_row' %}">Add New Row</a>
+    {% else %}
+      <div style="margin-top: 75px" class="alert alert-warning text-center">No data to display! Please Upload a file.</div>
+      <div class="row">
+        <div class="col-md-12 d-flex justify-content-center">
+          <a class="btn btn-primary d-flex" href="{% url 'practice_app:upload_csv' %}">Upload CSV File</a>
+        </div>
+      </div>
+
+    {% endif %}
+  </div>
+
+  <script>
+        let backup_to_s3_url = window.origin+"{% url 'practice_app:backup_to_s3' %}";
+        let restore_from_s3_url = window.origin+"{% url 'practice_app:restore_from_s3' %}";
+  </script>
+  <script src="{% static 'practice_app/js/index.js' %}"></script>
 {% endblock %}

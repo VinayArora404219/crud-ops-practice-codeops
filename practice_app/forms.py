@@ -32,7 +32,31 @@ class UploadCSVFileForm(forms.Form):
         return cleaned_data
 
 
-class EditOrCreateCSVRowForm(forms.ModelForm):
+class EditCSVRowForm(forms.ModelForm):
+    class Meta:
+        model = MuseumAPICSV
+        exclude = ('objectId', )
+
+    def clean(self):
+        cleaned_data = super(EditCSVRowForm, self).clean()
+        for key, value in cleaned_data.items():
+            if value is None:
+                cleaned_data[key] = ''
+
+        return cleaned_data
+
+
+class CreateCSVRowForm(forms.ModelForm):
     class Meta:
         model = MuseumAPICSV
         fields = '__all__'
+
+    def clean(self):
+        cleaned_data = super(CreateCSVRowForm, self).clean()
+        for key, value in cleaned_data.items():
+            if value is None:
+                cleaned_data[key] = ''
+            if key == 'galleryNumber' or key == 'constituentID':
+                cleaned_data[key] = -1
+
+        return cleaned_data

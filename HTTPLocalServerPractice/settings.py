@@ -52,6 +52,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'HTTPLocalServerPractice.urls'
 
+BACKUP_BUCKET_NAME = 'crud-app-404'
+
 TEMPLATE_DIR = Path.joinpath(BASE_DIR, Path('templates'))
 
 TEMPLATES = [

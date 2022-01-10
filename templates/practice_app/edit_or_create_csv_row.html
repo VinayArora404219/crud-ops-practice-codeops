@@ -22,4 +22,11 @@
             <input style="float:right" class="btn btn-primary" type="submit" value="Save">
         </form>
     </div>
+    <script>
+        for(let element of document.querySelectorAll('input[type=text]')) {
+            if(element.value === undefined || element.value === '') {
+                element.value = '';
+            }
+        }
+    </script>
 {% endblock %}

@@ -1,17 +1,14 @@
 import pandas as pd
 from django.core.exceptions import ValidationError
+import boto3
 
 
-def check_missing_values(df):
-    for col in df.columns:
-        print(col)
-        miss = df[col].isnull().sum()
-        if miss > 0:
-            raise ValidationError("{} has {} missing value(s)".format(col, miss))
-        else:
-            pass
+def get_s3_client(profile_name='default', region_name=None):
+    session = boto3.session.Session(
+        profile_name=profile_name,
+        region_name=region_name
+    )
+    s3 = session.client('s3')
 
-
-def validate_csv(df):
-    check_missing_values(df)
+    return s3
 

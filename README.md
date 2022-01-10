@@ -3,8 +3,7 @@
 
 A project to demonstrate CRUD operations on a web server.
 
-# **Installation**
-
+# **Installation and Configuration**
 
 
 ```commandline
@@ -18,6 +17,20 @@ source venv/Scripts/activate.bat
 
 pip3 install -r requirements.txt
 ```
+Go to HTTPLocalServerPractice/settings.py and modify the following
+setting to configure the connection to mysql database:
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': '<database-name>',
+        'USER': '<user-name>',
+        'PASSWORD': '<password>',
+        'HOST': '<hostname>',
+        'PORT': '<port-number>',
+    },
+}
+```
 
 # **Usage**
 
@@ -25,6 +38,9 @@ Start the Django server with:
 ```
 python3 manage.py runserver
 ```
+
+
+
 
 **Test**
 
