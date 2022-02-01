@@ -24,7 +24,12 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes />
+    <loaded-nodes>
+      <connection connection-id="5742e1cb-cd31-4304-969a-4d584a1a4c8b">
+        <schema name="csvdb" object-types="table, view" />
+        <schema name="mysql" object-types="table, view" />
+      </connection>
+    </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="5742e1cb-cd31-4304-969a-4d584a1a4c8b">

@@ -3,26 +3,25 @@
 """
 
 import csv
+import datetime
 from io import TextIOWrapper
 
 from botocore.exceptions import ClientError
 from django.conf import settings
-from museum_api.utils import Converter
-
-from .utils import get_s3_client
-from django.forms.models import model_to_dict
-
 from django.core.exceptions import ValidationError
+from django.forms.models import model_to_dict
 from django.http import HttpResponse, JsonResponse
+from django.shortcuts import get_object_or_404
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views.decorators.http import require_http_methods
 from django.views.generic import UpdateView, CreateView
+from museum_api.utils import Converter
 
 from practice_app.forms import UploadCSVFileForm, CreateCSVRowForm, EditCSVRowForm
 from practice_app.models import MuseumAPICSV
-from django.shortcuts import get_object_or_404
+from .utils import get_s3_client, get_sns_client
 
 
 @require_http_methods(["GET"])
@@ -40,6 +39,7 @@ def list_csv_content_view(request):
             'headings': headings,
             'csv_objs': museum_api_csv_objs,
             })
+
 
 def csv_to_museum_api_objects(csv_content):
     list_of_dicts = list(csv.DictReader(csv_content.split('\n')))
@@ -116,6 +116,7 @@ def csv_to_museum_api_objects(csv_content):
         ))
     return objects
 
+
 class CSVEditRowView(UpdateView):
     """
     View that allows the user to edit a CSV row.
@@ -126,6 +127,20 @@ class CSVEditRowView(UpdateView):
     template_name = 'practice_app/edit_or_create_csv_row.html'
     success_url = reverse_lazy('practice_app:index')
     required_css_class = 'required'
+
+    def get_success_url(self):
+        try:
+            sns = get_sns_client()
+            obj = self.get_object()
+
+            sns.publish(
+                TopicArn=settings.SNS_TOPIC_ARN,
+                Subject=f'[CRUD App] Row id {str(obj.pk)} updated - {datetime.datetime.now()}',
+                Message=f'Hi,\n\nA row with id {str(obj.pk)} has been updated\n\nRegards,\nXYZ'
+            )
+        except ClientError as cl_e:
+            pass
+        return super(CSVEditRowView, self).get_success_url()
 
     @method_decorator(require_http_methods(["GET", "POST"]))
     def dispatch(self, *args, **kwargs):
@@ -141,6 +156,20 @@ class CSVAddNewRowView(CreateView):
     template_name = 'practice_app/edit_or_create_csv_row.html'
     success_url = reverse_lazy('practice_app:index')
     required_css_class = 'required'
+
+    def get_success_url(self):
+        try:
+            sns = get_sns_client()
+
+            sns.publish(
+                TopicArn=settings.SNS_TOPIC_ARN,
+                Subject=f'[CRUD App] New Row has been added - {datetime.datetime.now()}',
+                Message='Hi,\n\nA new row has been added to the CSV\n\nRegards,\nXYZ'
+            )
+        except ClientError as cl_e:
+            pass
+
+        return super().get_success_url()
 
     @method_decorator(require_http_methods(["GET", "POST"]))
     def dispatch(self, *args, **kwargs):
@@ -160,8 +189,19 @@ def csv_row_delete_view(request, objectId):
 
     if request.method == 'POST':
         row_obj = get_object_or_404(MuseumAPICSV, pk=objectId)
+        row_id = row_obj.pk
 
         row_obj.delete()
+        try:
+            sns = get_sns_client()
+
+            sns.publish(
+                TopicArn=settings.SNS_TOPIC_ARN,
+                Subject=f'[CRUD App] Row id {row_id} has been deleted - {datetime.datetime.now()}',
+                Message=f'Hi,\n\nA row with id {row_id} has been successfully deleted\n\nRegards,\nXYZ'
+            )
+        except ClientError as cl_e:
+            pass
         return redirect('practice_app:index')
 
 
@@ -176,10 +216,24 @@ def backup_to_s3_view(request):
                 list_of_dicts.append(model_to_dict(obj))
             Converter.convert_to_csv(list_of_dicts, file_name)
             try:
+                sns = get_sns_client()
+                sns.publish(
+                    TopicArn=settings.SNS_TOPIC_ARN,
+                    Subject=f'[CRUD App] Backup initiated - {datetime.datetime.now()}',
+                    Message='Hi,\n\nA backu p to S3 has been successfully initiated.\n\nRegards,\nXYZ'
+                )
+
                 s3 = get_s3_client('default')
                 bucket_name = settings.BACKUP_BUCKET_NAME
 
                 s3.upload_file(file_name, bucket_name, file_name)
+
+                sns.publish(
+                    TopicArn=settings.SNS_TOPIC_ARN,
+                    Subject=f'[CRUD App] Backup Completed - {datetime.datetime.now()}',
+                    Message=f'Hi,\n\nA backu p to S3 has been successfully completed'
+                            '\n\nRegards,\nXYZ'
+                )
 
                 return JsonResponse({
                     'success': 'Backup Completed successfully'
@@ -202,6 +256,14 @@ def restore_from_s3_view(request):
         try:
             s3 = get_s3_client('default')
             s3.download_file(bucket_name, file_name, file_name)
+
+            sns = get_sns_client()
+
+            sns.publish(
+                TopicArn=settings.SNS_TOPIC_ARN,
+                Subject=f'[CRUD App] Restoration Completed - {datetime.datetime.now()}',
+                Message='Hi,\n\nData has been successfully restored.\n\nRegards,\nXYZ'
+            )
         except ClientError as cl_e:
             if int(cl_e.response['Error']['Code']) == 404:
                 return JsonResponse({
@@ -263,5 +325,18 @@ def csv_file_upload_view(request):
             objects,
             ignore_conflicts=True
         )
+
+        try:
+            sns = get_sns_client()
+
+            sns.publish(
+                TopicArn=settings.SNS_TOPIC_ARN,
+                Subject=f'[CRUD App] CSV file {file_name} has been successfully uploaded - {datetime.datetime.now()}',
+                Message=f'Hi,\n\n A CSV file {file_name} has been successfully uploaded to the server.'
+                        f' \n\nRegards,\nXYZ'
+            )
+        except ClientError as cl_e:
+            pass
+            logging.error()
 
         return redirect('practice_app:index')

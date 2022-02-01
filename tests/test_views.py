@@ -485,7 +485,6 @@ class TestCSVAddNewRowView(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertEqual(MuseumAPICSV.objects.last().objectId, 16)
 
-
     def test_add_existing_row(self):
         """
         Test if the view raises error if the user tries to add an existing row.
