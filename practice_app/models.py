@@ -1,6 +1,5 @@
 from django.db import models
 
-
 GENDER_CHOICES = (
     ('male', 'Male'),
     ('female', 'Female'),
@@ -15,7 +14,7 @@ class MuseumAPICSV(models.Model):
     objectId = models.IntegerField(primary_key=True)
     isHighlight = models.BooleanField()
     accessionNumber = models.CharField(max_length=50)
-    accessionYear = models.IntegerField()
+    accessionYear = models.CharField(max_length=50)
     isPublicDomain = models.BooleanField()
     primaryImage = models.CharField(max_length=50, null=True, blank=True)
     primaryImageSmall = models.CharField(max_length=50, null=True, blank=True)
@@ -64,7 +63,7 @@ class MuseumAPICSV(models.Model):
     classification = models.CharField(max_length=50, null=True, blank=True)
     rightsAndReproduction = models.CharField(max_length=50, null=True, blank=True)
     linkResource = models.CharField(max_length=50, null=True, blank=True)
-    metadataDate = models.CharField(max_length=50, null=True, blank=True)
+    metadataDate = models.DateTimeField(null=True, blank=True)
     repository = models.CharField(max_length=50, null=True, blank=True)
     objectURL = models.CharField(max_length=50, null=True, blank=True)
     tags = models.CharField(max_length=50, null=True, blank=True)
@@ -76,13 +75,14 @@ class MuseumAPICSV(models.Model):
     name = models.CharField(max_length=50, null=True, blank=True)
     constituentULAN_URL = models.CharField(max_length=50, null=True, blank=True)
     constituentWikidata_URL = models.CharField(max_length=50, null=True, blank=True)
-    gender = models.CharField(max_length = 20,
+    gender = models.CharField(max_length=20,
                               choices=GENDER_CHOICES,
                               default='male'
                               )
 
+    def save(self, *args, **kwargs):
+        # self.metadataDate = parse_datetime(self.metadataDate)
+        super(MuseumAPICSV, self).save(*args, **kwargs)
+
     def __str__(self):
         return str(self.objectId)
-
-
-

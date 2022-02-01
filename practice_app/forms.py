@@ -33,15 +33,20 @@ class UploadCSVFileForm(forms.Form):
 
 
 class EditCSVRowForm(forms.ModelForm):
+    metadataDate = forms.DateTimeField(
+        error_messages={'invalid': 'date time must be of following format yyyy-mm-dd hh:mm:ss'}
+    )
+
     class Meta:
         model = MuseumAPICSV
-        exclude = ('objectId', )
+        exclude = ('objectId',)
 
     def clean(self):
         cleaned_data = super(EditCSVRowForm, self).clean()
         for key, value in cleaned_data.items():
-            if value is None:
-                cleaned_data[key] = ''
+            if key != 'metadataDate':
+                if value is None:
+                    cleaned_data[key] = ''
 
         return cleaned_data
 
